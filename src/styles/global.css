@@ -11,4 +11,30 @@
 	--color-aged-cream: #B8A98C;
 	--color-smoke: #7A6E5F;
 	--color-midnight-slate: #4A6070;
+
+	--font-sans: 'Switzer', ui-sans-serif, system-ui, sans-serif;
+	--font-display: 'Fraunces', ui-serif, Georgia, serif;
+}
+
+@layer base {
+	html {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+	}
+	body {
+		font-family: var(--font-sans);
+		font-feature-settings: 'ss01', 'liga';
+	}
+	h1, h2, h3, h4 {
+		font-family: var(--font-display);
+		font-optical-sizing: auto;
+		letter-spacing: -0.02em;
+		font-variation-settings: 'SOFT' 30;
+	}
+	blockquote {
+		font-family: var(--font-display);
+		font-optical-sizing: auto;
+		font-variation-settings: 'SOFT' 50;
+	}
 }
