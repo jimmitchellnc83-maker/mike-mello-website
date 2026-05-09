@@ -4,50 +4,195 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Videos - Mike Mello" description="Stand-up clips, specials, and featured videos from Mike Mello.">
 	<div class="container mx-auto px-4 py-12">
-		<h1 class="text-5xl font-bold text-center mb-12 text-slate-800">Videos</h1>
+		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">Videos</h1>
 
-		<!-- Featured / Latest -->
+		<!-- Featured -->
 		<section class="mb-16">
-			<h2 class="text-3xl font-bold mb-6 text-amber-600">Latest</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
-					<p class="text-gray-600">[Featured Video 1 — embed]</p>
-				</div>
-				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
-					<p class="text-gray-600">[Featured Video 2 — embed]</p>
-				</div>
+			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Featured</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<a
+					href="https://www.imdb.com/title/tt7971376/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group relative bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg aspect-video overflow-hidden transition-colors"
+				>
+					<img
+						src="/images/incognegro-poster.jpg"
+						alt="Mike Mello — Incognegro 2018 special poster"
+						class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity"
+						loading="lazy"
+					/>
+					<div class="absolute inset-0 bg-gradient-to-t from-stage-black via-stage-black/70 to-stage-black/40"></div>
+					<div class="relative h-full flex flex-col items-center justify-center text-center p-6">
+						<p class="text-xs uppercase tracking-widest text-smoke mb-3">Stand-Up Special · 2018</p>
+						<p class="text-3xl font-bold italic text-spotlight-gold mb-2">Incognegro</p>
+						<p class="text-aged-cream text-sm mb-4">Hour-long original — written by Mike Mello, directed by Tye Banks</p>
+						<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">View on IMDB →</p>
+					</div>
+				</a>
+
+				<a
+					href="https://www.instagram.com/officialhitkor/reel/C1-1zqtJai9/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group relative bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg aspect-video overflow-hidden transition-colors"
+				>
+					<img
+						src="/images/whats-seasoning-poster.jpg"
+						alt="Mike Mello — What's Seasoning? special on HITKOR"
+						class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity"
+						loading="lazy"
+					/>
+					<div class="absolute inset-0 bg-gradient-to-t from-stage-black via-stage-black/70 to-stage-black/40"></div>
+					<div class="relative h-full flex flex-col items-center justify-center text-center p-6">
+						<p class="text-xs uppercase tracking-widest text-smoke mb-3">Stand-Up Special</p>
+						<p class="text-3xl font-bold italic text-spotlight-gold mb-2">What's Seasoning?</p>
+						<p class="text-aged-cream text-sm mb-4">Second special — streaming on HITKOR</p>
+						<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on HITKOR →</p>
+					</div>
+				</a>
+
+				<a
+					href="https://www.imdb.com/title/tt31500128/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg aspect-video flex flex-col items-center justify-center text-center p-6 transition-colors"
+				>
+					<p class="text-xs uppercase tracking-widest text-smoke mb-3">TV Appearance · 2022</p>
+					<p class="text-2xl font-bold italic text-spotlight-gold mb-2">D.L. Hughley's Speakeasy</p>
+					<p class="text-aged-cream text-sm mb-4">Featured comic on D.L. Hughley's stand-up showcase</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">View on IMDB →</p>
+				</a>
 			</div>
 		</section>
 
 		<!-- Stand-Up Clips -->
 		<section class="mb-16">
-			<h2 class="text-3xl font-bold mb-6 text-amber-600">Stand-Up Clips</h2>
+			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Stand-Up Clips</h2>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
-					<p class="text-gray-600">[Clip 1]</p>
-				</div>
-				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
-					<p class="text-gray-600">[Clip 2]</p>
-				</div>
-				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
-					<p class="text-gray-600">[Clip 3]</p>
-				</div>
+				<figure>
+					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
+						<iframe
+							src="https://www.youtube.com/embed/CkCemJljinE"
+							title="Mike Mello — Comedy Game Show, Episode 14"
+							loading="lazy"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							class="w-full h-full"
+						></iframe>
+					</div>
+					<figcaption class="mt-2 text-sm text-aged-cream">Comedy Game Show — Episode 14</figcaption>
+				</figure>
+
+				<figure>
+					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
+						<iframe
+							src="https://www.youtube.com/embed/sHHqDC2QyKw"
+							title="Mike Mello Miller — Comedy Game Show, Episode 27"
+							loading="lazy"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							class="w-full h-full"
+						></iframe>
+					</div>
+					<figcaption class="mt-2 text-sm text-aged-cream">Comedy Game Show — Episode 27</figcaption>
+				</figure>
+
+				<figure>
+					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
+						<iframe
+							src="https://www.youtube.com/embed/7J7-9d8Ghdw"
+							title="Mello Mike — Crackheads and squirrels crossing the street"
+							loading="lazy"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							class="w-full h-full"
+						></iframe>
+					</div>
+					<figcaption class="mt-2 text-sm text-aged-cream">"Crackheads and squirrels" — Laugh Your Asheville Off festival</figcaption>
+				</figure>
+
+				<figure>
+					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
+						<iframe
+							src="https://www.youtube.com/embed/EGfh2qC5TS4"
+							title="Dementia — Mike Mello on Rhizome Comedy"
+							loading="lazy"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							class="w-full h-full"
+						></iframe>
+					</div>
+					<figcaption class="mt-2 text-sm text-aged-cream">"Dementia" — feature on Rhizome Comedy</figcaption>
+				</figure>
+
+				<figure>
+					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
+						<iframe
+							src="https://www.youtube.com/embed/z5B2w5LMep0"
+							title="Red Light — Mike Mello on Rhizome Comedy"
+							loading="lazy"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							class="w-full h-full"
+						></iframe>
+					</div>
+					<figcaption class="mt-2 text-sm text-aged-cream">"Red Light" — feature on Rhizome Comedy</figcaption>
+				</figure>
+
+				<a
+					href="https://www.instagram.com/mikemellomiller/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg aspect-video flex flex-col items-center justify-center text-center p-6 transition-colors"
+				>
+					<p class="text-xs uppercase tracking-widest text-smoke mb-3">More Clips</p>
+					<p class="text-2xl font-bold text-spotlight-gold mb-2">@mikemellomiller</p>
+					<p class="text-aged-cream text-sm mb-4">Reels, sets, and behind-the-scenes</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Follow on Instagram →</p>
+				</a>
 			</div>
 		</section>
 
 		<!-- Podcasts / Appearances -->
 		<section>
-			<h2 class="text-3xl font-bold mb-6 text-amber-600">Podcasts & Appearances</h2>
+			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Podcasts & Appearances</h2>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
-					<p class="text-gray-600">[Appearance 1]</p>
-				</div>
-				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
-					<p class="text-gray-600">[Appearance 2]</p>
-				</div>
-				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
-					<p class="text-gray-600">[Appearance 3]</p>
-				</div>
+				<a
+					href="https://carypodcast.libsyn.com/episode-37-comedian-mike-mello-miller"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg aspect-video flex flex-col items-center justify-center text-center p-6 transition-colors"
+				>
+					<p class="text-xs uppercase tracking-widest text-smoke mb-3">Podcast · Jul 2025</p>
+					<p class="text-xl font-bold text-spotlight-gold mb-2">The Cary Podcast — Ep. 37</p>
+					<p class="text-aged-cream text-sm mb-4">"Comedian Mike Mello Miller"</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Listen →</p>
+				</a>
+
+				<a
+					href="https://www.instagram.com/p/DKcMC9WOxBt/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg aspect-video flex flex-col items-center justify-center text-center p-6 transition-colors"
+				>
+					<p class="text-xs uppercase tracking-widest text-smoke mb-3">Podcast Guest</p>
+					<p class="text-xl font-bold text-spotlight-gold mb-2">In TRUE Form</p>
+					<p class="text-aged-cream text-sm mb-4">Mike's guest spot on the In TRUE Form podcast</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on Instagram →</p>
+				</a>
+
+				<a
+					href="https://www.instagram.com/rhizomecomedy/reel/C2zzAxwA_p1/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg aspect-video flex flex-col items-center justify-center text-center p-6 transition-colors"
+				>
+					<p class="text-xs uppercase tracking-widest text-smoke mb-3">Comedy Showcase</p>
+					<p class="text-xl font-bold text-spotlight-gold mb-2">Rhizome Comedy</p>
+					<p class="text-aged-cream text-sm mb-4">Mike featured on Rhizome Comedy's stage</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on Instagram →</p>
+				</a>
 			</div>
 		</section>
 	</div>

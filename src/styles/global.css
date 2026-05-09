@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@theme {
+	--color-stage-black: #0F0C09;
+	--color-dim-house: #1A1510;
+	--color-warm-dark: #231C14;
+	--color-amber-shadow: #2E2318;
+	--color-spotlight-gold: #C98B2A;
+	--color-stage-amber: #E0A03A;
+	--color-warm-ivory: #F0E6D3;
+	--color-aged-cream: #B8A98C;
+	--color-smoke: #7A6E5F;
+	--color-midnight-slate: #4A6070;
+}

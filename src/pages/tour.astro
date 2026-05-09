@@ -4,61 +4,75 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Tour Dates - Mike Mello" description="Upcoming tour dates and live shows for Mike Mello.">
 	<div class="container mx-auto px-4 py-12">
-		<h1 class="text-5xl font-bold text-center mb-12 text-slate-800">Tour Dates</h1>
+		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">Tour Dates</h1>
 
-		<div class="max-w-4xl mx-auto">
-			<!-- Show 1 -->
-			<article class="bg-white p-8 rounded-lg shadow-lg mb-6">
-				<div class="flex flex-col md:flex-row md:items-center md:justify-between">
-					<div class="mb-4 md:mb-0">
-						<p class="text-sm text-gray-500 uppercase tracking-wide">[Date]</p>
-						<h2 class="text-2xl font-bold text-amber-600">[Venue Name]</h2>
-						<p class="text-gray-700">[City, State]</p>
+		<div class="max-w-5xl mx-auto">
+			<!-- Status / empty state with promo image -->
+			<div class="bg-dim-house border border-warm-ivory/10 rounded-lg overflow-hidden">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+					<div class="p-10 flex flex-col justify-center text-center md:text-left">
+						<p class="text-xs uppercase tracking-widest text-smoke mb-4">Tour Status</p>
+						<h2 class="text-3xl font-bold text-spotlight-gold mb-4">New Dates Being Booked</h2>
+						<p class="text-aged-cream mb-8">
+							Mike's working out the next run. Follow on Instagram for show announcements as they're posted, or get in touch about a private booking, college, club, or corporate date.
+						</p>
+						<div class="flex flex-col sm:flex-row gap-4 md:justify-start justify-center">
+							<a
+								href="https://www.instagram.com/mikemellomiller/"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors text-center"
+							>
+								Follow on Instagram
+							</a>
+							<a
+								href="/contact"
+								class="inline-block bg-transparent border border-warm-ivory/20 text-warm-ivory hover:bg-warm-ivory/10 font-bold py-3 px-8 rounded-lg transition-colors text-center"
+							>
+								Booking Inquiry
+							</a>
+						</div>
 					</div>
-					<a href="#" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-lg transition-colors text-center">
-						Tickets
-					</a>
-				</div>
-			</article>
-
-			<!-- Show 2 -->
-			<article class="bg-white p-8 rounded-lg shadow-lg mb-6">
-				<div class="flex flex-col md:flex-row md:items-center md:justify-between">
-					<div class="mb-4 md:mb-0">
-						<p class="text-sm text-gray-500 uppercase tracking-wide">[Date]</p>
-						<h2 class="text-2xl font-bold text-amber-600">[Venue Name]</h2>
-						<p class="text-gray-700">[City, State]</p>
+					<div class="hidden md:block relative bg-amber-shadow min-h-72">
+						<img
+							src="/images/neptunes-comedy-promo.jpg"
+							alt="Neptunes Comedy at The Pour House — Mike Mello show promo"
+							class="absolute inset-0 w-full h-full object-cover opacity-70"
+							loading="lazy"
+						/>
+						<div class="absolute inset-0 bg-gradient-to-l from-transparent via-stage-black/30 to-stage-black/60"></div>
 					</div>
-					<a href="#" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-lg transition-colors text-center">
-						Tickets
-					</a>
 				</div>
-			</article>
+			</div>
 
-			<!-- Show 3 -->
-			<article class="bg-white p-8 rounded-lg shadow-lg mb-6">
-				<div class="flex flex-col md:flex-row md:items-center md:justify-between">
-					<div class="mb-4 md:mb-0">
-						<p class="text-sm text-gray-500 uppercase tracking-wide">[Date]</p>
-						<h2 class="text-2xl font-bold text-amber-600">[Venue Name]</h2>
-						<p class="text-gray-700">[City, State]</p>
+			<!-- Recent Highlights -->
+			<section class="mt-16">
+				<h2 class="text-2xl font-bold mb-6 text-warm-ivory text-center">Recent Highlights</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					<div class="bg-dim-house border border-warm-ivory/10 p-5 rounded-lg">
+						<p class="text-spotlight-gold font-semibold mb-1">Segra Stadium</p>
+						<p class="text-aged-cream text-sm">Fayetteville, NC · 2024 · Headlined the Woodpeckers stadium comedy night</p>
 					</div>
-					<a href="#" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded-lg transition-colors text-center">
-						Tickets
-					</a>
-				</div>
-			</article>
-
-			<!-- Mailing list / alerts -->
-			<section class="mt-12">
-				<h2 class="text-3xl font-bold mb-6 text-slate-800">Get Show Alerts</h2>
-				<div class="bg-slate-100 p-8 rounded-lg">
-					<p class="text-lg text-gray-700 mb-4">
-						Want to know when Mike is in your city? Drop your email and get tour alerts.
-					</p>
-					<p class="text-sm text-gray-500">
-						[Mailing-list signup form to be added]
-					</p>
+					<div class="bg-dim-house border border-warm-ivory/10 p-5 rounded-lg">
+						<p class="text-spotlight-gold font-semibold mb-1">The Idiot Box Comedy Club</p>
+						<p class="text-aged-cream text-sm">Greensboro, NC · Multiple headlining runs</p>
+					</div>
+					<div class="bg-dim-house border border-warm-ivory/10 p-5 rounded-lg">
+						<p class="text-spotlight-gold font-semibold mb-1">SECCA</p>
+						<p class="text-aged-cream text-sm">Winston-Salem, NC · 2021 · Museum stand-up showcase</p>
+					</div>
+					<div class="bg-dim-house border border-warm-ivory/10 p-5 rounded-lg">
+						<p class="text-spotlight-gold font-semibold mb-1">Charlie Goodnight's</p>
+						<p class="text-aged-cream text-sm">Raleigh, NC · Career home club — featured runs alongside Andy Woodhull</p>
+					</div>
+					<div class="bg-dim-house border border-warm-ivory/10 p-5 rounded-lg">
+						<p class="text-spotlight-gold font-semibold mb-1">Raleigh Improv</p>
+						<p class="text-aged-cream text-sm">Cary, NC · Headlining and feature runs</p>
+					</div>
+					<div class="bg-dim-house border border-warm-ivory/10 p-5 rounded-lg">
+						<p class="text-spotlight-gold font-semibold mb-1">Neptunes Comedy at The Pour House</p>
+						<p class="text-aged-cream text-sm">Raleigh, NC · Recurring showcase appearances</p>
+					</div>
 				</div>
 			</section>
 		</div>

@@ -4,44 +4,36 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Contact - Mike Mello" description="Booking and contact info for Mike Mello — clubs, colleges, corporate, and private events.">
 	<div class="container mx-auto px-4 py-12">
-		<h1 class="text-5xl font-bold text-center mb-12 text-slate-800">Contact</h1>
+		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">Contact</h1>
 
 		<div class="max-w-4xl mx-auto">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 				<!-- Contact Info -->
 				<section>
-					<div class="bg-white p-8 rounded-lg shadow-lg">
-						<h2 class="text-3xl font-bold mb-6 text-amber-600">Booking & Press</h2>
+					<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg">
+						<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Get in Touch</h2>
 
-						<div class="space-y-4">
+						<div class="space-y-6">
 							<div>
-								<h3 class="font-bold text-lg mb-2">General Booking</h3>
-								<p class="text-gray-700">
-									<a href="mailto:[BOOKING_EMAIL]" class="text-amber-600 hover:text-amber-700">[Booking Email]</a>
+								<h3 class="font-bold text-lg mb-2 text-warm-ivory">Booking, press, & general</h3>
+								<p class="text-aged-cream">
+									Use the form to send a booking, press, or general inquiry. Mike covers clubs, colleges, corporate, and private events.
 								</p>
 							</div>
 
 							<div>
-								<h3 class="font-bold text-lg mb-2">Colleges / Corporate</h3>
-								<p class="text-gray-700">
-									<a href="mailto:[CORPORATE_EMAIL]" class="text-amber-600 hover:text-amber-700">[Corporate Email]</a>
+								<h3 class="font-bold text-lg mb-2 text-warm-ivory">Quick questions</h3>
+								<p class="text-aged-cream">
+									DM <a href="https://www.instagram.com/mikemellomiller/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber">@mikemellomiller</a> on Instagram for the fastest reply.
 								</p>
 							</div>
 
 							<div>
-								<h3 class="font-bold text-lg mb-2">Press & Media</h3>
-								<p class="text-gray-700">
-									<a href="mailto:[PRESS_EMAIL]" class="text-amber-600 hover:text-amber-700">[Press Email]</a>
-								</p>
-							</div>
-
-							<div>
-								<h3 class="font-bold text-lg mb-2">Follow</h3>
-								<div class="flex space-x-4">
-									<a href="#" class="text-amber-600 hover:text-amber-700">Instagram</a>
-									<a href="#" class="text-amber-600 hover:text-amber-700">TikTok</a>
-									<a href="#" class="text-amber-600 hover:text-amber-700">YouTube</a>
-									<a href="#" class="text-amber-600 hover:text-amber-700">X</a>
+								<h3 class="font-bold text-lg mb-2 text-warm-ivory">Follow</h3>
+								<div class="flex flex-wrap gap-x-4 gap-y-2">
+									<a href="https://www.instagram.com/mikemellomiller/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber">Instagram</a>
+									<a href="https://twitter.com/mikemellocomedy" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber">X / Twitter</a>
+									<a href="https://www.facebook.com/mello.m.miller/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber">Facebook</a>
 								</div>
 							</div>
 						</div>
@@ -50,65 +42,66 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- Contact Form -->
 				<section>
-					<div class="bg-white p-8 rounded-lg shadow-lg">
-						<h2 class="text-3xl font-bold mb-6 text-amber-600">Send a Message</h2>
+					<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg">
+						<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Send a Message</h2>
 
 						<form class="space-y-4">
 							<div>
-								<label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+								<label for="name" class="block text-warm-ivory font-semibold mb-2">Name</label>
 								<input
 									type="text"
 									id="name"
 									name="name"
-									class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 									required
 								/>
 							</div>
 
 							<div>
-								<label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+								<label for="email" class="block text-warm-ivory font-semibold mb-2">Email</label>
 								<input
 									type="email"
 									id="email"
 									name="email"
-									class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 									required
 								/>
 							</div>
 
 							<div>
-								<label for="reason" class="block text-gray-700 font-semibold mb-2">Reason</label>
+								<label for="reason" class="block text-warm-ivory font-semibold mb-2">Reason</label>
 								<select
 									id="reason"
 									name="reason"
-									class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 								>
 									<option>Booking inquiry</option>
+									<option>Colleges / corporate</option>
 									<option>Press / media</option>
 									<option>General</option>
 								</select>
 							</div>
 
 							<div>
-								<label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+								<label for="message" class="block text-warm-ivory font-semibold mb-2">Message</label>
 								<textarea
 									id="message"
 									name="message"
 									rows="5"
-									class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 									required
 								></textarea>
 							</div>
 
 							<button
 								type="submit"
-								class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+								class="w-full bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-6 rounded-lg transition-colors"
 							>
 								Send Message
 							</button>
 
-							<p class="text-sm text-gray-500 text-center">
-								[Form handler to be added - currently non-functional]
+							<p class="text-sm text-smoke text-center">
+								Form delivery coming soon — for now, fastest reply is via <a href="https://www.instagram.com/mikemellomiller/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber">Instagram DM</a>.
 							</p>
 						</form>
 					</div>

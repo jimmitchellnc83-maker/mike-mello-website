@@ -4,42 +4,59 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="About - Mike Mello" description="About Mike Mello — stand-up comedian, credits, and bio.">
 	<div class="container mx-auto px-4 py-12">
-		<h1 class="text-5xl font-bold text-center mb-12 text-slate-800">About</h1>
+		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">About</h1>
 
 		<!-- Bio -->
-		<section class="mb-16 max-w-4xl mx-auto">
-			<h2 class="text-3xl font-bold mb-6 text-amber-600">Bio</h2>
-			<div class="bg-white p-8 rounded-lg shadow-lg">
-				<p class="text-gray-700 mb-4">
-					[Short bio to be added — origin story, comedic voice, what makes Mike's act distinct.]
-				</p>
-				<p class="text-gray-700">
-					[Long-form bio paragraph — career arc, influences, current projects.]
-				</p>
+		<section class="mb-16 max-w-5xl mx-auto">
+			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Bio</h2>
+			<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+				<div class="md:col-span-2">
+					<img
+						src="/images/incognegro-live-stage.jpg"
+						alt="Mike Mello performing live during Incognegro"
+						width="1086"
+						height="923"
+						loading="lazy"
+						class="rounded-lg border border-warm-ivory/10 w-full h-full object-cover"
+					/>
+				</div>
+				<div class="md:col-span-3 bg-dim-house border border-warm-ivory/10 p-8 rounded-lg">
+					<p class="text-warm-ivory mb-4">
+						A self-described "black hippie" (<em>INDY Week</em>) and 20+ year veteran of the comedy circuit, Mike Mello has been making rooms laugh since his start at Raleigh's legendary Charlie Goodnight's Comedy Club.
+					</p>
+					<p class="text-warm-ivory">
+						Virginia-born and based in Raleigh after nearly 25 years in Cary, Mike has shared stages with some of the biggest names in stand-up — touring with Tracy Morgan (who once tried to buy a joke from him) and Russell Peters, and opening for Dave Chappelle, Ralphie May, Damon Wayans, and D.L. Hughley. He was a finalist in the NBC Stand-Up Diversity Showcase, can be heard on SiriusXM, and starred in his own hour-long special, <em>Incognegro</em> (2018), followed by <em>What's Seasoning?</em> on HITKOR. In 2022, he appeared on <em>D.L. Hughley's Speakeasy: Comedy Overload</em>.
+					</p>
+				</div>
 			</div>
 		</section>
 
 		<!-- Credits -->
 		<section class="mb-16 max-w-4xl mx-auto">
-			<h2 class="text-3xl font-bold mb-6 text-amber-600">Credits</h2>
-			<div class="bg-white p-8 rounded-lg shadow-lg">
-				<ul class="space-y-3 text-lg text-gray-700">
-					<li>[TV / streaming appearance]</li>
-					<li>[Festival appearance]</li>
-					<li>[Podcast appearance]</li>
-					<li>[Album / special]</li>
+			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Credits</h2>
+			<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg">
+				<ul class="space-y-3 text-lg text-warm-ivory">
+					<li><strong><em>Incognegro</em></strong> (2018) — hour-long stand-up special</li>
+					<li><strong><em>What's Seasoning?</em></strong> — second special, streaming on HITKOR</li>
+					<li><strong><em>D.L. Hughley's Speakeasy: Comedy Overload</em></strong> (2022)</li>
+					<li>NBC Stand-Up Diversity Showcase — finalist</li>
+					<li>SiriusXM Radio</li>
+					<li>Toured with Tracy Morgan and Russell Peters</li>
+					<li>Opened for Dave Chappelle, Ralphie May, D.L. Hughley, and Damon Wayans</li>
+					<li>Headlined Charlie Goodnight's, The Idiot Box, SECCA, and Segra Stadium</li>
+					<li>IMDB profile: <a href="https://www.imdb.com/name/nm9610033/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber">imdb.com/name/nm9610033</a></li>
 				</ul>
 			</div>
 		</section>
 
 		<!-- Quotes / Press blurb -->
 		<section class="max-w-4xl mx-auto">
-			<h2 class="text-3xl font-bold mb-6 text-amber-600">What People Are Saying</h2>
-			<div class="bg-slate-100 p-8 rounded-lg">
-				<blockquote class="text-xl italic text-gray-700 mb-2">
-					"[Pull quote from a review or peer]"
+			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">What People Are Saying</h2>
+			<div class="bg-warm-dark p-8 rounded-lg">
+				<blockquote class="text-xl italic text-warm-ivory mb-2">
+					"One of the most respected comedians in the community."
 				</blockquote>
-				<p class="text-sm text-gray-500">— [Source]</p>
+				<p class="text-sm text-smoke">— INDY Week</p>
 			</div>
 		</section>
 	</div>

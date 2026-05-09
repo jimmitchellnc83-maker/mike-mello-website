@@ -4,15 +4,27 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Mike Mello - Stand-Up Comedian">
 	<!-- Hero Section -->
-	<section class="bg-slate-800 text-white py-20">
-		<div class="container mx-auto px-4 text-center">
-			<h1 class="text-5xl md:text-6xl font-bold mb-4">
+	<section class="relative bg-stage-black py-20 overflow-hidden">
+		<div class="absolute inset-0" aria-hidden="true">
+			<img
+				src="/images/raleigh-improv-stage.jpg"
+				alt=""
+				class="w-full h-full object-cover opacity-25"
+				loading="eager"
+			/>
+			<div class="absolute inset-0 bg-gradient-to-b from-stage-black/30 via-stage-black/70 to-stage-black"></div>
+		</div>
+		<div class="relative container mx-auto px-4 text-center">
+			<h1 class="text-5xl md:text-6xl font-bold mb-4 text-warm-ivory">
 				Mike Mello
 			</h1>
-			<p class="text-xl md:text-2xl text-gray-300 mb-8">
+			<p class="text-xl md:text-2xl text-aged-cream mb-3">
 				Stand-Up Comedian
 			</p>
-			<a href="/tour" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+			<p class="text-base md:text-lg text-smoke mb-10 max-w-2xl mx-auto">
+				20+ years on the road. Shared stages with Tracy Morgan, Russell Peters, and Dave Chappelle.
+			</p>
+			<a href="/tour" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors">
 				See Tour Dates
 			</a>
 		</div>
@@ -21,30 +33,30 @@ import Layout from '../layouts/Layout.astro';
 	<!-- Featured Section -->
 	<section class="py-16">
 		<div class="container mx-auto px-4">
-			<h2 class="text-4xl font-bold text-center mb-12 text-slate-800">
+			<h2 class="text-4xl font-bold text-center mb-12 text-warm-ivory">
 				What's Going On
 			</h2>
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<!-- Live Shows -->
-				<div class="bg-white p-8 rounded-lg shadow-lg text-center">
-					<h3 class="text-2xl font-bold mb-4 text-amber-600">Live Shows</h3>
-					<p class="text-gray-600">
+				<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg text-center">
+					<h3 class="text-2xl font-bold mb-4 text-spotlight-gold">Live Shows</h3>
+					<p class="text-aged-cream">
 						Catch Mike on the road — clubs, theaters, and festivals across the country.
 					</p>
 				</div>
 
 				<!-- Videos -->
-				<div class="bg-white p-8 rounded-lg shadow-lg text-center">
-					<h3 class="text-2xl font-bold mb-4 text-amber-600">Watch</h3>
-					<p class="text-gray-600">
-						Stand-up clips, specials, and viral moments. [Featured videos to be added]
+				<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg text-center">
+					<h3 class="text-2xl font-bold mb-4 text-spotlight-gold">Watch</h3>
+					<p class="text-aged-cream">
+						Mike's hour-long special <em>Incognegro</em>, his set on <em>D.L. Hughley's Speakeasy</em>, and club clips.
 					</p>
 				</div>
 
 				<!-- Booking -->
-				<div class="bg-white p-8 rounded-lg shadow-lg text-center">
-					<h3 class="text-2xl font-bold mb-4 text-amber-600">Booking</h3>
-					<p class="text-gray-600">
+				<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg text-center">
+					<h3 class="text-2xl font-bold mb-4 text-spotlight-gold">Booking</h3>
+					<p class="text-aged-cream">
 						For private events, corporate, college, and club bookings — get in touch.
 					</p>
 				</div>
@@ -52,19 +64,21 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<!-- Next Show Snapshot -->
-	<section class="bg-slate-100 py-16">
+	<!-- On the Road -->
+	<section class="bg-warm-dark py-16">
 		<div class="container mx-auto px-4 text-center">
-			<h2 class="text-4xl font-bold mb-8 text-slate-800">Next Show</h2>
-			<p class="text-xl text-gray-700 mb-4">
-				[Venue, City]
+			<h2 class="text-4xl font-bold mb-4 text-warm-ivory">On the Road</h2>
+			<p class="text-lg text-aged-cream mb-8 max-w-2xl mx-auto">
+				From Charlie Goodnight's to Segra Stadium — and everywhere in between. Follow along for the next set of dates.
 			</p>
-			<p class="text-lg text-gray-600 mb-8">
-				[Date & Time to be added]
-			</p>
-			<a href="/tour" class="inline-block bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
-				All Tour Dates
-			</a>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="/tour" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors">
+					Tour Dates
+				</a>
+				<a href="https://www.instagram.com/mikemellomiller/" target="_blank" rel="noopener noreferrer" class="inline-block bg-transparent border border-warm-ivory/20 text-warm-ivory hover:bg-warm-ivory/10 font-bold py-3 px-8 rounded-lg transition-colors">
+					Follow @mikemellomiller
+				</a>
+			</div>
 		</div>
 	</section>
 </Layout>
