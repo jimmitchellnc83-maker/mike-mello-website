@@ -1,0 +1,47 @@
+# Mike Mello
+
+Stand-up comedian based in Raleigh, North Carolina, with 20+ years on the road.
+
+## Identity
+
+- Performing name: Mike Mello (also known as Mello Mike, Mike Mello Miller)
+- Real name: Michael Miller
+- Born in Virginia; spent ~25 years in Cary, NC; now based in Raleigh, NC
+- Started his career at Charlie Goodnight's Comedy Club in Raleigh
+
+## Career credits
+
+- Two stand-up specials: *Incognegro* (2018, IMDB tt7971376) and *What's Seasoning?* (streaming on HITKOR)
+- TV credit: *D.L. Hughley's Speakeasy: Comedy Overload* (2022)
+- NBC Stand-Up Diversity Showcase finalist
+- Heard on SiriusXM Radio
+- Toured with Tracy Morgan and Russell Peters
+- Opened for Dave Chappelle, Ralphie May, D.L. Hughley, and Damon Wayans
+- IMDB: https://www.imdb.com/name/nm9610033/
+
+## Press
+
+- INDY Week 2023 profile by Craig Lindsey ("one of the most respected comedians in the community")
+- Raleigh Magazine "Mellow Humor" feature, November 2018
+- WRAL: "Mike Mello celebrates 15 years in stand-up"
+- The Cary Podcast Episode 37 (July 2025)
+
+## Site structure
+
+- /         — Home: hero, what's going on, tour preview
+- /about    — Bio, full credits list, press blurb
+- /tour     — Tour status and recent venue highlights
+- /videos   — Featured specials, stand-up clips, podcast appearances
+- /press    — Press kit and coverage
+- /contact  — Booking inquiries (form), social links
+
+## How to reach Mike
+
+- Booking, press, corporate, and private event inquiries: https://mikemello.com/contact
+- Instagram: https://www.instagram.com/mikemellomiller/
+- X / Twitter: https://twitter.com/mikemellocomedy
+- Facebook: https://www.facebook.com/mello.m.miller/
+
+## What Mike does
+
+Mike Mello is a working stand-up comedian. He headlines comedy clubs, performs at festivals, books private and corporate events, and hosts. His style is laid-back and observational, with a smooth delivery shaped by 20+ years on stages from Raleigh to Los Angeles.

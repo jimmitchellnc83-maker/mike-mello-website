@@ -14,6 +14,55 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/images/raleigh-improv-stage.jpg', Astro.site).toString();
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': 'https://mikemello.com/#person',
+  name: 'Mike Mello',
+  alternateName: ['Mello Mike', 'Mike Mello Miller', 'Michael Miller'],
+  jobTitle: 'Stand-Up Comedian',
+  description:
+    'Stand-up comedian with 20+ years on the road, based in Raleigh, NC. NBC Stand-Up Diversity Showcase finalist. Toured with Tracy Morgan and Russell Peters; opened for Dave Chappelle, Ralphie May, D.L. Hughley, and Damon Wayans. Two specials: Incognegro (2018) and What’s Seasoning? on HITKOR.',
+  url: 'https://mikemello.com',
+  image: ogImage,
+  homeLocation: {
+    '@type': 'Place',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Raleigh',
+      addressRegion: 'NC',
+      addressCountry: 'US'
+    }
+  },
+  birthPlace: {
+    '@type': 'Place',
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'VA',
+      addressCountry: 'US'
+    }
+  },
+  sameAs: [
+    'https://www.imdb.com/name/nm9610033/',
+    'https://www.instagram.com/mikemellomiller/',
+    'https://twitter.com/mikemellocomedy',
+    'https://www.facebook.com/mello.m.miller/'
+  ],
+  award: 'NBC Stand-Up Diversity Showcase finalist'
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://mikemello.com/#website',
+  url: 'https://mikemello.com',
+  name: 'Mike Mello',
+  description: 'Official website of stand-up comedian Mike Mello',
+  publisher: { '@id': 'https://mikemello.com/#person' },
+  inLanguage: 'en-US'
+};
 ---
 
 <!doctype html>
@@ -41,12 +90,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content="Mike Mello" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:alt" content="Mike Mello performing on stage at Raleigh Improv" />
 
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:url" content={canonicalURL} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:creator" content="@MikeMelloComedy" />
+		<meta name="twitter:site" content="@MikeMelloComedy" />
+
+		<!-- Structured data -->
+		<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+		<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 	</head>
 	<body class="flex flex-col min-h-screen bg-stage-black text-warm-ivory">
 		<Header />
