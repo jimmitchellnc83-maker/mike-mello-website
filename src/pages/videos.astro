@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Videos - Mike Mello" description="Stand-up clips, specials, and featured videos from Mike Mello.">
+	<div class="container mx-auto px-4 py-12">
+		<h1 class="text-5xl font-bold text-center mb-12 text-slate-800">Videos</h1>
+
+		<!-- Featured / Latest -->
+		<section class="mb-16">
+			<h2 class="text-3xl font-bold mb-6 text-amber-600">Latest</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
+					<p class="text-gray-600">[Featured Video 1 — embed]</p>
+				</div>
+				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
+					<p class="text-gray-600">[Featured Video 2 — embed]</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Stand-Up Clips -->
+		<section class="mb-16">
+			<h2 class="text-3xl font-bold mb-6 text-amber-600">Stand-Up Clips</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
+					<p class="text-gray-600">[Clip 1]</p>
+				</div>
+				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
+					<p class="text-gray-600">[Clip 2]</p>
+				</div>
+				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
+					<p class="text-gray-600">[Clip 3]</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Podcasts / Appearances -->
+		<section>
+			<h2 class="text-3xl font-bold mb-6 text-amber-600">Podcasts & Appearances</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
+					<p class="text-gray-600">[Appearance 1]</p>
+				</div>
+				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
+					<p class="text-gray-600">[Appearance 2]</p>
+				</div>
+				<div class="bg-slate-200 rounded-lg shadow-lg aspect-video flex items-center justify-center">
+					<p class="text-gray-600">[Appearance 3]</p>
+				</div>
+			</div>
+		</section>
+	</div>
+</Layout>
