@@ -4,27 +4,27 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Mike Mello - Stand-Up Comedian">
 	<!-- Hero Section -->
-	<section class="relative bg-stage-black py-20 overflow-hidden">
+	<section class="relative bg-stage-black overflow-hidden min-h-[75vh] md:min-h-[85vh] flex items-end">
 		<div class="absolute inset-0" aria-hidden="true">
 			<img
 				src="/images/raleigh-improv-stage.jpg"
 				alt=""
-				class="w-full h-full object-cover opacity-25"
+				class="w-full h-full object-cover object-[center_25%] opacity-90"
 				loading="eager"
 			/>
-			<div class="absolute inset-0 bg-gradient-to-b from-stage-black/30 via-stage-black/70 to-stage-black"></div>
+			<div class="absolute inset-0 bg-gradient-to-b from-stage-black/10 via-stage-black/30 to-stage-black"></div>
 		</div>
-		<div class="relative container mx-auto px-4 text-center">
-			<h1 class="text-5xl md:text-6xl font-bold mb-4 text-warm-ivory">
+		<div class="relative container mx-auto px-4 text-center pb-12 md:pb-20">
+			<h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 text-warm-ivory [text-shadow:0_2px_16px_rgba(0,0,0,0.7)]">
 				Mike Mello
 			</h1>
-			<p class="text-xl md:text-2xl text-aged-cream mb-3">
+			<p class="text-xl md:text-2xl text-aged-cream mb-3 [text-shadow:0_1px_8px_rgba(0,0,0,0.8)]">
 				Stand-Up Comedian
 			</p>
-			<p class="text-base md:text-lg text-smoke mb-10 max-w-2xl mx-auto">
+			<p class="text-base md:text-lg text-warm-ivory/90 mb-10 max-w-2xl mx-auto [text-shadow:0_1px_6px_rgba(0,0,0,0.8)]">
 				20+ years on the road. Shared stages with Tracy Morgan, Russell Peters, and Dave Chappelle.
 			</p>
-			<a href="/tour" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors">
+			<a href="/tour" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors shadow-xl">
 				See Tour Dates
 			</a>
 		</div>
