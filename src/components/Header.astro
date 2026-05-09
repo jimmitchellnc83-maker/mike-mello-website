@@ -1,8 +1,19 @@
 ---
 // Navigation component for Mike Mello
+const currentPath = Astro.url.pathname;
+const navItems: Array<{ href: string; label: string }> = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/tour', label: 'Tour' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/press', label: 'Press' },
+  { href: '/contact', label: 'Contact' },
+];
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 ---
 
-<header class="bg-warm-dark text-warm-ivory border-b border-warm-ivory/10">
+<header class="bg-warm-dark/90 backdrop-blur-md text-warm-ivory border-b border-warm-ivory/10 sticky top-0 z-40">
   <nav class="container mx-auto px-4 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo/Brand -->
@@ -12,20 +23,74 @@
 
       <!-- Desktop Navigation -->
       <ul class="hidden md:flex space-x-8">
-        <li><a href="/" class="hover:text-spotlight-gold transition-colors">Home</a></li>
-        <li><a href="/about" class="hover:text-spotlight-gold transition-colors">About</a></li>
-        <li><a href="/tour" class="hover:text-spotlight-gold transition-colors">Tour</a></li>
-        <li><a href="/videos" class="hover:text-spotlight-gold transition-colors">Videos</a></li>
-        <li><a href="/press" class="hover:text-spotlight-gold transition-colors">Press</a></li>
-        <li><a href="/contact" class="hover:text-spotlight-gold transition-colors">Contact</a></li>
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'transition-colors',
+                isActive(item.href) ? 'text-spotlight-gold' : 'hover:text-spotlight-gold',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
       </ul>
 
-      <!-- Mobile Menu Button (to be implemented) -->
-      <button class="md:hidden text-warm-ivory">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Mobile Menu Button -->
+      <button
+        class="md:hidden text-warm-ivory p-2 -mr-2 rounded-md hover:bg-warm-ivory/5 transition-colors"
+        data-mobile-toggle
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="w-6 h-6" data-icon-open fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg class="w-6 h-6 hidden" data-icon-close fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2 border-t border-warm-ivory/10 pt-3" data-mobile-menu>
+      <ul class="flex flex-col gap-1 text-lg">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'block py-3 px-3 rounded-md transition-colors',
+                isActive(item.href)
+                  ? 'text-spotlight-gold bg-spotlight-gold/10'
+                  : 'text-warm-ivory hover:bg-warm-ivory/5 hover:text-spotlight-gold',
+              ]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </nav>
 </header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('[data-mobile-toggle]');
+  const menu = document.querySelector<HTMLDivElement>('[data-mobile-menu]');
+  const openIcon = toggle?.querySelector<SVGElement>('[data-icon-open]');
+  const closeIcon = toggle?.querySelector<SVGElement>('[data-icon-close]');
+
+  toggle?.addEventListener('click', () => {
+    if (!menu) return;
+    const willOpen = menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(willOpen));
+    toggle.setAttribute('aria-label', willOpen ? 'Close menu' : 'Open menu');
+  });
+</script>
