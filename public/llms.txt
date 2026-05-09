@@ -6,7 +6,7 @@ Stand-up comedian based in Raleigh, North Carolina, with 20+ years on the road.
 
 - Performing name: Mike Mello (also known as Mello Mike, Mike Mello Miller)
 - Real name: Michael Miller
-- Born in Virginia; spent ~25 years in Cary, NC; now based in Raleigh, NC
+- Born in Virginia. Spent ~25 years in Cary, NC. Now based in Raleigh, NC.
 - Started his career at Charlie Goodnight's Comedy Club in Raleigh
 
 ## Career credits
@@ -28,12 +28,12 @@ Stand-up comedian based in Raleigh, North Carolina, with 20+ years on the road.
 
 ## Site structure
 
-- /         — Home: hero, what's going on, tour preview
-- /about    — Bio, full credits list, press blurb
-- /tour     — Tour status and recent venue highlights
-- /videos   — Featured specials, stand-up clips, podcast appearances
-- /press    — Press kit and coverage
-- /contact  — Booking inquiries (form), social links
+- /         Home (hero, what's going on, tour preview)
+- /about    Bio, full credits list, press blurb
+- /tour     Tour status and recent venue highlights
+- /videos   Featured specials, stand-up clips, podcast appearances
+- /press    Press kit and coverage
+- /contact  Booking inquiries (form), social links
 
 ## How to reach Mike
 

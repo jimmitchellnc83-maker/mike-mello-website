@@ -10,7 +10,7 @@ interface Props {
 }
 
 const {
-  title = 'Mike Mello — Stand-Up Comedian | Book Mike for Clubs, Colleges, Corporate & Private Events',
+  title = 'Mike Mello | Stand-Up Comedian | Booking Clubs, Colleges, Corporate, & Private Events',
   description = 'Mike Mello is a Raleigh, NC stand-up comedian with 20+ years on the road. NBC Stand-Up Diversity finalist. Two specials. Book Mike for clubs, colleges, corporate, private events, and hosting.',
   schema
 } = Astro.props;
@@ -26,7 +26,7 @@ const personSchema = {
   alternateName: ['Mello Mike', 'Mike Mello Miller', 'Michael Miller'],
   jobTitle: 'Stand-Up Comedian',
   description:
-    'Stand-up comedian with 20+ years on the road, based in Raleigh, NC. NBC Stand-Up Diversity Showcase finalist. Toured with Tracy Morgan and Russell Peters; opened for Dave Chappelle, Ralphie May, D.L. Hughley, and Damon Wayans. Two specials: Incognegro (2018) and What’s Seasoning? on HITKOR.',
+    "Stand-up comedian with 20+ years on the road, based in Raleigh, NC. NBC Stand-Up Diversity Showcase finalist. Toured with Tracy Morgan and Russell Peters; opened for Dave Chappelle, Ralphie May, D.L. Hughley, and Damon Wayans. Two specials: Incognegro (2018) and What's Seasoning? on HITKOR.",
   url: 'https://mikemello.com',
   image: ogImage,
   knowsAbout: ['Stand-up comedy', 'Comedy writing', 'Hosting', 'Emcee work'],
@@ -71,7 +71,7 @@ const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   '@id': 'https://mikemello.com/#booking',
-  name: 'Mike Mello — Stand-Up Comedy Booking',
+  name: 'Mike Mello Stand-Up Comedy Booking',
   description:
     'Book stand-up comedian Mike Mello for comedy clubs, colleges, corporate events, private parties, festivals, and hosting/emcee work.',
   provider: { '@id': 'https://mikemello.com/#person' },

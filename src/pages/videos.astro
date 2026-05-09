@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const title = 'Mike Mello Videos — Specials, Stand-Up Clips, & TV Appearances';
-const description = "Watch Mike Mello's stand-up: Incognegro (2018) special, What's Seasoning? on HITKOR, D.L. Hughley's Speakeasy, plus Comedy Game Show sets, festival clips, and podcast appearances.";
+const title = 'Mike Mello Videos | Specials, Stand-Up Clips, and TV Appearances';
+const description = "Watch Mike Mello's stand-up. Incognegro (2018) special, What's Seasoning? on HITKOR, D.L. Hughley's Speakeasy, plus Comedy Game Show sets, festival clips, and podcast appearances.";
 
 type VideoSchema = {
   id: string;
@@ -11,11 +11,11 @@ type VideoSchema = {
 };
 
 const youtubeVideos: VideoSchema[] = [
-  { id: 'CkCemJljinE', name: 'Mike Mello — Comedy Game Show, Episode 14', description: 'Mike Mello stand-up set on Comedy Game Show, Episode 14.' },
-  { id: 'sHHqDC2QyKw', name: 'Mike Mello Miller — Comedy Game Show, Episode 27', description: 'Mike Mello Miller stand-up set on Comedy Game Show, Episode 27.' },
-  { id: '7J7-9d8Ghdw', name: 'Mello Mike — Crackheads and squirrels crossing the street', description: 'Mike Mello at the Laugh Your Asheville Off comedy festival.' },
-  { id: 'EGfh2qC5TS4', name: 'Dementia — Mike Mello on Rhizome Comedy', description: 'Mike Mello stand-up bit "Dementia," featured on Rhizome Comedy.' },
-  { id: 'z5B2w5LMep0', name: 'Red Light — Mike Mello on Rhizome Comedy', description: 'Mike Mello stand-up bit "Red Light," featured on Rhizome Comedy.' },
+  { id: 'CkCemJljinE', name: 'Mike Mello on Comedy Game Show, Episode 14', description: 'Mike Mello stand-up set on Comedy Game Show, Episode 14.' },
+  { id: 'sHHqDC2QyKw', name: 'Mike Mello Miller on Comedy Game Show, Episode 27', description: 'Mike Mello Miller stand-up set on Comedy Game Show, Episode 27.' },
+  { id: '7J7-9d8Ghdw', name: "Mello Mike: Crackheads and squirrels crossing the street", description: 'Mike Mello at the Laugh Your Asheville Off comedy festival.' },
+  { id: 'EGfh2qC5TS4', name: 'Dementia: Mike Mello on Rhizome Comedy', description: 'Mike Mello stand-up bit "Dementia," featured on Rhizome Comedy.' },
+  { id: 'z5B2w5LMep0', name: 'Red Light: Mike Mello on Rhizome Comedy', description: 'Mike Mello stand-up bit "Red Light," featured on Rhizome Comedy.' },
 ];
 
 const videoSchemas = youtubeVideos.map((v) => ({
@@ -48,7 +48,7 @@ const videoSchemas = youtubeVideos.map((v) => ({
 				>
 					<img
 						src="/images/incognegro-poster.jpg"
-						alt="Mike Mello — Incognegro 2018 special poster"
+						alt="Mike Mello, Incognegro 2018 special poster"
 						class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity"
 						loading="lazy"
 					/>
@@ -56,8 +56,8 @@ const videoSchemas = youtubeVideos.map((v) => ({
 					<div class="relative h-full flex flex-col items-center justify-center text-center p-6">
 						<p class="text-xs uppercase tracking-widest text-smoke mb-3">Stand-Up Special · 2018</p>
 						<p class="text-2xl md:text-3xl font-bold italic text-spotlight-gold mb-2">Incognegro</p>
-						<p class="text-aged-cream text-sm mb-4">Hour-long original — written by Mike Mello, directed by Tye Banks</p>
-						<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">View on IMDB →</p>
+						<p class="text-aged-cream text-sm mb-4">Hour-long original. Written by Mike Mello, directed by Tye Banks.</p>
+						<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">View on IMDB &rarr;</p>
 					</div>
 				</a>
 
@@ -69,7 +69,7 @@ const videoSchemas = youtubeVideos.map((v) => ({
 				>
 					<img
 						src="/images/whats-seasoning-poster.jpg"
-						alt="Mike Mello — What's Seasoning? special on HITKOR"
+						alt="Mike Mello, What's Seasoning? special on HITKOR"
 						class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity"
 						loading="lazy"
 					/>
@@ -77,8 +77,8 @@ const videoSchemas = youtubeVideos.map((v) => ({
 					<div class="relative h-full flex flex-col items-center justify-center text-center p-6">
 						<p class="text-xs uppercase tracking-widest text-smoke mb-3">Stand-Up Special</p>
 						<p class="text-2xl md:text-3xl font-bold italic text-spotlight-gold mb-2">What's Seasoning?</p>
-						<p class="text-aged-cream text-sm mb-4">Second special — streaming on HITKOR</p>
-						<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on HITKOR →</p>
+						<p class="text-aged-cream text-sm mb-4">Second special, streaming on HITKOR.</p>
+						<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on HITKOR &rarr;</p>
 					</div>
 				</a>
 
@@ -90,8 +90,8 @@ const videoSchemas = youtubeVideos.map((v) => ({
 				>
 					<p class="text-xs uppercase tracking-widest text-smoke mb-3">TV Appearance · 2022</p>
 					<p class="text-2xl font-bold italic text-spotlight-gold mb-2">D.L. Hughley's Speakeasy</p>
-					<p class="text-aged-cream text-sm mb-4">Featured comic on D.L. Hughley's stand-up showcase</p>
-					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">View on IMDB →</p>
+					<p class="text-aged-cream text-sm mb-4">Featured comic on D.L. Hughley's stand-up showcase.</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">View on IMDB &rarr;</p>
 				</a>
 			</div>
 		</section>
@@ -104,70 +104,70 @@ const videoSchemas = youtubeVideos.map((v) => ({
 					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
 						<iframe
 							src="https://www.youtube.com/embed/CkCemJljinE"
-							title="Mike Mello — Comedy Game Show, Episode 14"
+							title="Mike Mello on Comedy Game Show, Episode 14"
 							loading="lazy"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 							allowfullscreen
 							class="w-full h-full"
 						></iframe>
 					</div>
-					<figcaption class="mt-2 text-sm text-aged-cream">Comedy Game Show — Episode 14</figcaption>
+					<figcaption class="mt-2 text-sm text-aged-cream">Comedy Game Show, Episode 14</figcaption>
 				</figure>
 
 				<figure>
 					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
 						<iframe
 							src="https://www.youtube.com/embed/sHHqDC2QyKw"
-							title="Mike Mello Miller — Comedy Game Show, Episode 27"
+							title="Mike Mello Miller on Comedy Game Show, Episode 27"
 							loading="lazy"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 							allowfullscreen
 							class="w-full h-full"
 						></iframe>
 					</div>
-					<figcaption class="mt-2 text-sm text-aged-cream">Comedy Game Show — Episode 27</figcaption>
+					<figcaption class="mt-2 text-sm text-aged-cream">Comedy Game Show, Episode 27</figcaption>
 				</figure>
 
 				<figure>
 					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
 						<iframe
 							src="https://www.youtube.com/embed/7J7-9d8Ghdw"
-							title="Mello Mike — Crackheads and squirrels crossing the street"
+							title="Mello Mike: Crackheads and squirrels crossing the street"
 							loading="lazy"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 							allowfullscreen
 							class="w-full h-full"
 						></iframe>
 					</div>
-					<figcaption class="mt-2 text-sm text-aged-cream">"Crackheads and squirrels" — Laugh Your Asheville Off festival</figcaption>
+					<figcaption class="mt-2 text-sm text-aged-cream">"Crackheads and squirrels," at the Laugh Your Asheville Off festival</figcaption>
 				</figure>
 
 				<figure>
 					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
 						<iframe
 							src="https://www.youtube.com/embed/EGfh2qC5TS4"
-							title="Dementia — Mike Mello on Rhizome Comedy"
+							title="Dementia: Mike Mello on Rhizome Comedy"
 							loading="lazy"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 							allowfullscreen
 							class="w-full h-full"
 						></iframe>
 					</div>
-					<figcaption class="mt-2 text-sm text-aged-cream">"Dementia" — feature on Rhizome Comedy</figcaption>
+					<figcaption class="mt-2 text-sm text-aged-cream">"Dementia," a Rhizome Comedy feature</figcaption>
 				</figure>
 
 				<figure>
 					<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
 						<iframe
 							src="https://www.youtube.com/embed/z5B2w5LMep0"
-							title="Red Light — Mike Mello on Rhizome Comedy"
+							title="Red Light: Mike Mello on Rhizome Comedy"
 							loading="lazy"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 							allowfullscreen
 							class="w-full h-full"
 						></iframe>
 					</div>
-					<figcaption class="mt-2 text-sm text-aged-cream">"Red Light" — feature on Rhizome Comedy</figcaption>
+					<figcaption class="mt-2 text-sm text-aged-cream">"Red Light," a Rhizome Comedy feature</figcaption>
 				</figure>
 
 				<a
@@ -178,8 +178,8 @@ const videoSchemas = youtubeVideos.map((v) => ({
 				>
 					<p class="text-xs uppercase tracking-widest text-smoke mb-3">More Clips</p>
 					<p class="text-2xl font-bold text-spotlight-gold mb-2">@mikemellomiller</p>
-					<p class="text-aged-cream text-sm mb-4">Reels, sets, and behind-the-scenes</p>
-					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Follow on Instagram →</p>
+					<p class="text-aged-cream text-sm mb-4">Reels, sets, and behind-the-scenes.</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Follow on Instagram &rarr;</p>
 				</a>
 			</div>
 		</section>
@@ -195,9 +195,9 @@ const videoSchemas = youtubeVideos.map((v) => ({
 					class="group bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg md:aspect-video min-h-[200px] flex flex-col items-center justify-center text-center p-6 transition-colors"
 				>
 					<p class="text-xs uppercase tracking-widest text-smoke mb-3">Podcast · Jul 2025</p>
-					<p class="text-xl font-bold text-spotlight-gold mb-2">The Cary Podcast — Ep. 37</p>
+					<p class="text-xl font-bold text-spotlight-gold mb-2">The Cary Podcast, Ep. 37</p>
 					<p class="text-aged-cream text-sm mb-4">"Comedian Mike Mello Miller"</p>
-					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Listen →</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Listen &rarr;</p>
 				</a>
 
 				<a
@@ -208,8 +208,8 @@ const videoSchemas = youtubeVideos.map((v) => ({
 				>
 					<p class="text-xs uppercase tracking-widest text-smoke mb-3">Podcast Guest</p>
 					<p class="text-xl font-bold text-spotlight-gold mb-2">In TRUE Form</p>
-					<p class="text-aged-cream text-sm mb-4">Mike's guest spot on the In TRUE Form podcast</p>
-					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on Instagram →</p>
+					<p class="text-aged-cream text-sm mb-4">Mike's guest spot on the In TRUE Form podcast.</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on Instagram &rarr;</p>
 				</a>
 
 				<a
@@ -220,8 +220,8 @@ const videoSchemas = youtubeVideos.map((v) => ({
 				>
 					<p class="text-xs uppercase tracking-widest text-smoke mb-3">Comedy Showcase</p>
 					<p class="text-xl font-bold text-spotlight-gold mb-2">Rhizome Comedy</p>
-					<p class="text-aged-cream text-sm mb-4">Mike featured on Rhizome Comedy's stage</p>
-					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on Instagram →</p>
+					<p class="text-aged-cream text-sm mb-4">Mike featured on Rhizome Comedy's stage.</p>
+					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on Instagram &rarr;</p>
 				</a>
 			</div>
 		</section>
