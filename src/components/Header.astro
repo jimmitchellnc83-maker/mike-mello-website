@@ -15,20 +15,20 @@ const isActive = (href: string) =>
 
 <header class="bg-warm-dark/90 backdrop-blur-md text-warm-ivory border-b border-warm-ivory/10 sticky top-0 z-40">
   <nav class="container mx-auto px-4 py-4">
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between gap-4">
       <!-- Logo/Brand -->
-      <a href="/" class="text-2xl font-bold hover:text-spotlight-gold transition-colors">
+      <a href="/" class="text-2xl font-bold hover:text-spotlight-gold transition-colors flex-shrink-0">
         Mike Mello
       </a>
 
       <!-- Desktop Navigation -->
-      <ul class="hidden md:flex space-x-8">
+      <ul class="hidden md:flex space-x-6 lg:space-x-8 ml-auto">
         {navItems.map((item) => (
           <li>
             <a
               href={item.href}
               class:list={[
-                'transition-colors',
+                'transition-colors text-sm lg:text-base',
                 isActive(item.href) ? 'text-spotlight-gold' : 'hover:text-spotlight-gold',
               ]}
             >
@@ -37,6 +37,14 @@ const isActive = (href: string) =>
           </li>
         ))}
       </ul>
+
+      <!-- Book Mike CTA (desktop) -->
+      <a
+        href="/contact"
+        class="hidden md:inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-2 px-5 rounded-md text-sm transition-colors flex-shrink-0"
+      >
+        Book Mike
+      </a>
 
       <!-- Mobile Menu Button -->
       <button
@@ -57,6 +65,12 @@ const isActive = (href: string) =>
 
     <!-- Mobile Menu Panel -->
     <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2 border-t border-warm-ivory/10 pt-3" data-mobile-menu>
+      <a
+        href="/contact"
+        class="block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-4 rounded-md text-center mb-3 transition-colors"
+      >
+        Book Mike
+      </a>
       <ul class="flex flex-col gap-1 text-lg">
         {navItems.map((item) => (
           <li>

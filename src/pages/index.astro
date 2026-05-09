@@ -1,8 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const title = 'Mike Mello — Stand-Up Comedian | Book Mike for Clubs, Colleges, Corporate & Private Events';
+const description = 'Mike Mello is a Raleigh, NC stand-up comedian with 20+ years on the road. NBC Stand-Up Diversity finalist. Two specials. Book Mike for clubs, colleges, corporate, private events, and hosting.';
+
+const eventTypes = [
+  { name: 'Comedy Clubs', detail: 'Headliner & feature' },
+  { name: 'Colleges & Universities', detail: 'Activities boards & lecture series' },
+  { name: 'Corporate Events', detail: 'Clean & custom material' },
+  { name: 'Private Parties', detail: 'Birthdays, weddings, holidays' },
+  { name: 'Hosting & Emcee', detail: 'Awards, fundraisers, galas' },
+  { name: 'Festivals', detail: 'Showcases & touring lineups' },
+];
+
+const proofPoints = [
+  "D.L. Hughley's Speakeasy",
+  'SiriusXM',
+  'NBC Stand-Up Diversity',
+  'IMDB',
+  'INDY Week',
+  'WRAL',
+  'Raleigh Magazine',
+];
 ---
 
-<Layout title="Mike Mello - Stand-Up Comedian">
+<Layout title={title} description={description}>
 	<!-- Hero Section -->
 	<section class="relative bg-stage-black overflow-hidden min-h-[75vh] md:min-h-[85vh] flex items-end">
 		<div class="absolute inset-0" aria-hidden="true">
@@ -24,48 +46,61 @@ import Layout from '../layouts/Layout.astro';
 			<p class="text-base md:text-lg text-warm-ivory/90 mb-10 max-w-2xl mx-auto [text-shadow:0_1px_6px_rgba(0,0,0,0.8)]">
 				20+ years on the road. Shared stages with Tracy Morgan, Russell Peters, and Dave Chappelle.
 			</p>
-			<a href="/tour" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors shadow-xl">
-				See Tour Dates
-			</a>
+			<div class="flex flex-col sm:flex-row gap-3 justify-center">
+				<a href="/contact" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors shadow-xl">
+					Book Mike
+				</a>
+				<a href="/videos" class="inline-block bg-transparent border border-warm-ivory/30 text-warm-ivory hover:bg-warm-ivory/10 font-bold py-3 px-8 rounded-lg transition-colors">
+					Watch a Clip
+				</a>
+			</div>
 		</div>
 	</section>
 
-	<!-- Featured Section -->
-	<section class="py-16">
+	<!-- Trust Strip -->
+	<section class="bg-warm-dark border-y border-warm-ivory/10 py-8" aria-label="As seen on">
 		<div class="container mx-auto px-4">
-			<h2 class="text-4xl font-bold text-center mb-12 text-warm-ivory">
-				What's Going On
-			</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-				<!-- Live Shows -->
-				<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg text-center">
-					<h3 class="text-2xl font-bold mb-4 text-spotlight-gold">Live Shows</h3>
-					<p class="text-aged-cream">
-						Catch Mike on the road — clubs, theaters, and festivals across the country.
-					</p>
-				</div>
+			<p class="text-xs uppercase tracking-widest text-smoke text-center mb-5">As seen on / heard on</p>
+			<ul class="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-8 gap-y-3 text-center list-none">
+				{proofPoints.map((p, i) => (
+					<>
+						<li class="text-warm-ivory/85 text-base md:text-lg">{p}</li>
+						{i < proofPoints.length - 1 && <li class="text-warm-ivory/30" aria-hidden="true">·</li>}
+					</>
+				))}
+			</ul>
+		</div>
+	</section>
 
-				<!-- Videos -->
-				<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg text-center">
-					<h3 class="text-2xl font-bold mb-4 text-spotlight-gold">Watch</h3>
-					<p class="text-aged-cream">
-						Mike's hour-long special <em>Incognegro</em>, his set on <em>D.L. Hughley's Speakeasy</em>, and club clips.
-					</p>
-				</div>
-
-				<!-- Booking -->
-				<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg text-center">
-					<h3 class="text-2xl font-bold mb-4 text-spotlight-gold">Booking</h3>
-					<p class="text-aged-cream">
-						For private events, corporate, college, and club bookings — get in touch.
-					</p>
-				</div>
+	<!-- Hire Mike for Your Stage -->
+	<section class="py-16 md:py-24" id="hire">
+		<div class="container mx-auto px-4 max-w-5xl">
+			<div class="text-center mb-10 md:mb-14">
+				<p class="text-xs uppercase tracking-widest text-smoke mb-3">Hire Mike</p>
+				<h2 class="text-4xl md:text-5xl font-bold text-warm-ivory mb-4">Available for your stage</h2>
+				<p class="text-lg text-aged-cream max-w-2xl mx-auto">
+					Comedy clubs, colleges, corporate events, private parties, hosting, and festivals — Mike brings 20+ years of stand-up to any room.
+				</p>
+			</div>
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+				{eventTypes.map((e) => (
+					<div class="bg-dim-house border border-warm-ivory/10 rounded-lg p-5 text-center hover:border-spotlight-gold/40 transition-colors">
+						<p class="text-warm-ivory font-semibold text-lg mb-1">{e.name}</p>
+						<p class="text-aged-cream text-sm">{e.detail}</p>
+					</div>
+				))}
+			</div>
+			<div class="text-center">
+				<a href="/contact" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-4 px-10 rounded-lg transition-colors text-lg shadow-xl">
+					Send a Booking Inquiry
+				</a>
+				<p class="text-sm text-smoke mt-3">Typical response within 48 hours</p>
 			</div>
 		</div>
 	</section>
 
 	<!-- On the Road -->
-	<section class="bg-warm-dark py-16">
+	<section class="bg-warm-dark py-16 border-t border-warm-ivory/10">
 		<div class="container mx-auto px-4 text-center">
 			<h2 class="text-4xl font-bold mb-4 text-warm-ivory">On the Road</h2>
 			<p class="text-lg text-aged-cream mb-8 max-w-2xl mx-auto">

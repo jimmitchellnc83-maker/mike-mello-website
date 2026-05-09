@@ -1,8 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const title = 'Mike Mello Videos — Specials, Stand-Up Clips, & TV Appearances';
+const description = "Watch Mike Mello's stand-up: Incognegro (2018) special, What's Seasoning? on HITKOR, D.L. Hughley's Speakeasy, plus Comedy Game Show sets, festival clips, and podcast appearances.";
+
+type VideoSchema = {
+  id: string;
+  name: string;
+  description: string;
+};
+
+const youtubeVideos: VideoSchema[] = [
+  { id: 'CkCemJljinE', name: 'Mike Mello — Comedy Game Show, Episode 14', description: 'Mike Mello stand-up set on Comedy Game Show, Episode 14.' },
+  { id: 'sHHqDC2QyKw', name: 'Mike Mello Miller — Comedy Game Show, Episode 27', description: 'Mike Mello Miller stand-up set on Comedy Game Show, Episode 27.' },
+  { id: '7J7-9d8Ghdw', name: 'Mello Mike — Crackheads and squirrels crossing the street', description: 'Mike Mello at the Laugh Your Asheville Off comedy festival.' },
+  { id: 'EGfh2qC5TS4', name: 'Dementia — Mike Mello on Rhizome Comedy', description: 'Mike Mello stand-up bit "Dementia," featured on Rhizome Comedy.' },
+  { id: 'z5B2w5LMep0', name: 'Red Light — Mike Mello on Rhizome Comedy', description: 'Mike Mello stand-up bit "Red Light," featured on Rhizome Comedy.' },
+];
+
+const videoSchemas = youtubeVideos.map((v) => ({
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: v.name,
+  description: v.description,
+  thumbnailUrl: `https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`,
+  embedUrl: `https://www.youtube.com/embed/${v.id}`,
+  contentUrl: `https://www.youtube.com/watch?v=${v.id}`,
+  uploadDate: '2024-01-01',
+  publisher: { '@id': 'https://mikemello.com/#person' },
+  about: { '@id': 'https://mikemello.com/#person' },
+}));
 ---
 
-<Layout title="Videos - Mike Mello" description="Stand-up clips, specials, and featured videos from Mike Mello.">
+<Layout title={title} description={description} schema={videoSchemas}>
 	<div class="container mx-auto px-4 py-12">
 		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">Videos</h1>
 

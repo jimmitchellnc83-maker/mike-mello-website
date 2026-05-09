@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Page Not Found — Mike Mello';
+const description = "That page doesn't exist. Head home, watch a clip, or send Mike a booking inquiry.";
+---
+
+<Layout title={title} description={description}>
+	<section class="container mx-auto px-4 py-24 text-center max-w-2xl">
+		<p class="text-7xl md:text-8xl font-bold text-spotlight-gold mb-4">404</p>
+		<h1 class="text-3xl md:text-4xl font-bold text-warm-ivory mb-4">Wrong stage, friend.</h1>
+		<p class="text-lg text-aged-cream mb-10">
+			That page doesn't exist. Try one of these instead.
+		</p>
+		<div class="flex flex-col sm:flex-row gap-3 justify-center">
+			<a href="/" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-6 rounded-lg transition-colors">Home</a>
+			<a href="/videos" class="inline-block bg-transparent border border-warm-ivory/20 text-warm-ivory hover:bg-warm-ivory/10 font-bold py-3 px-6 rounded-lg transition-colors">Watch Clips</a>
+			<a href="/contact" class="inline-block bg-transparent border border-warm-ivory/20 text-warm-ivory hover:bg-warm-ivory/10 font-bold py-3 px-6 rounded-lg transition-colors">Book Mike</a>
+		</div>
+	</section>
+</Layout>

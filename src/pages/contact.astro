@@ -1,12 +1,74 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const title = 'Book Mike Mello — Comedy Clubs, Colleges, Corporate, Private Events, & Hosting';
+const description = 'Book stand-up comedian Mike Mello for clubs, colleges, corporate events, private parties, festivals, or hosting/emcee work. Based in Raleigh, NC. Typical reply within 48 hours.';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': 'https://mikemello.com/contact#faq',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I book Mike Mello?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Submit an inquiry through the form on this page or DM @mikemellomiller on Instagram. Include the event date, city, venue, audience size, tone (clean / club / private), and budget. Typical response within 48 hours.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What types of events does Mike Mello perform at?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Mike performs at comedy clubs as a headliner and feature, college and university shows through activities boards, corporate events, private parties (birthdays, weddings, holiday events), festivals, and hosting / emcee work for galas, fundraisers, and award shows.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Where is Mike Mello based and does he travel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Mike is based in Raleigh, North Carolina, and tours nationally. He has headlined and featured at venues across the United States including Charlie Goodnight\'s, The Idiot Box, SECCA, and Segra Stadium.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Mike do clean / corporate-friendly material?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Mike tailors his set to the room and is comfortable performing clean, corporate-friendly material when the audience requires it. Indicate the audience and tone preferences in the booking inquiry.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What credits does Mike Mello have?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Mike has two stand-up specials (Incognegro, 2018; What’s Seasoning?, on HITKOR), a TV credit on D.L. Hughley’s Speakeasy: Comedy Overload (2022), is an NBC Stand-Up Diversity Showcase finalist, and is heard on SiriusXM. He has toured with Tracy Morgan and Russell Peters and opened for Dave Chappelle, Ralphie May, D.L. Hughley, and Damon Wayans.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How long are Mike’s sets?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Set lengths are flexible: 5–10 minute spots, 30–45 minute features, 45–60 minute headlining sets, or full 90 minute solo shows. Hosting and emcee blocks are tailored to the event run-of-show. Specify the desired length in your inquiry.'
+      }
+    }
+  ]
+};
 ---
 
-<Layout title="Contact - Mike Mello" description="Booking and contact info for Mike Mello — clubs, colleges, corporate, and private events.">
+<Layout title={title} description={description} schema={faqSchema}>
 	<div class="container mx-auto px-4 py-12">
-		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">Contact</h1>
+		<h1 class="text-5xl font-bold text-center mb-4 text-warm-ivory">Book Mike</h1>
+		<p class="text-lg text-aged-cream text-center max-w-2xl mx-auto mb-12">
+			Clubs, colleges, corporate, private events, hosting, and festivals. Based in Raleigh, NC. Touring nationally.
+		</p>
 
-		<div class="max-w-4xl mx-auto">
+		<div class="max-w-5xl mx-auto">
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 				<!-- Contact Info -->
 				<section>
@@ -17,7 +79,7 @@ import Layout from '../layouts/Layout.astro';
 							<div>
 								<h3 class="font-bold text-lg mb-2 text-warm-ivory">Booking, press, & general</h3>
 								<p class="text-aged-cream">
-									Use the form to send a booking, press, or general inquiry. Mike covers clubs, colleges, corporate, and private events.
+									Use the form to send a booking, press, or general inquiry. Include the event date, city, venue, audience, tone, and budget for the fastest response.
 								</p>
 							</div>
 
@@ -26,6 +88,11 @@ import Layout from '../layouts/Layout.astro';
 								<p class="text-aged-cream">
 									DM <a href="https://www.instagram.com/mikemellomiller/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber">@mikemellomiller</a> on Instagram for the fastest reply.
 								</p>
+							</div>
+
+							<div>
+								<h3 class="font-bold text-lg mb-2 text-warm-ivory">Response time</h3>
+								<p class="text-aged-cream">Typical response within 48 hours.</p>
 							</div>
 
 							<div>
@@ -43,7 +110,7 @@ import Layout from '../layouts/Layout.astro';
 				<!-- Contact Form -->
 				<section>
 					<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg">
-						<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Send a Message</h2>
+						<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Send a Booking Inquiry</h2>
 
 						<form class="space-y-4">
 							<div>
@@ -69,26 +136,31 @@ import Layout from '../layouts/Layout.astro';
 							</div>
 
 							<div>
-								<label for="reason" class="block text-warm-ivory font-semibold mb-2">Reason</label>
+								<label for="reason" class="block text-warm-ivory font-semibold mb-2">Event Type</label>
 								<select
 									id="reason"
 									name="reason"
 									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 								>
-									<option>Booking inquiry</option>
-									<option>Colleges / corporate</option>
+									<option>Comedy club booking</option>
+									<option>College / university show</option>
+									<option>Corporate event</option>
+									<option>Private event</option>
+									<option>Festival</option>
+									<option>Hosting / emcee</option>
 									<option>Press / media</option>
-									<option>General</option>
+									<option>General inquiry</option>
 								</select>
 							</div>
 
 							<div>
-								<label for="message" class="block text-warm-ivory font-semibold mb-2">Message</label>
+								<label for="message" class="block text-warm-ivory font-semibold mb-2">Tell Mike about the event</label>
 								<textarea
 									id="message"
 									name="message"
 									rows="5"
-									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
+									placeholder="Date, city, venue, audience size, tone (clean / club / private), and ballpark budget — anything else Mike should know."
+									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory placeholder-smoke rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 									required
 								></textarea>
 							</div>
@@ -97,7 +169,7 @@ import Layout from '../layouts/Layout.astro';
 								type="submit"
 								class="w-full bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-6 rounded-lg transition-colors"
 							>
-								Send Message
+								Send Inquiry
 							</button>
 
 							<p class="text-sm text-smoke text-center">
@@ -107,6 +179,24 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 				</section>
 			</div>
+
+			<!-- FAQ -->
+			<section class="mt-16 max-w-3xl mx-auto">
+				<h2 class="text-3xl font-bold mb-8 text-spotlight-gold text-center">Booking FAQ</h2>
+				<div class="space-y-4">
+					{faqSchema.mainEntity.map((q) => (
+						<details class="bg-dim-house border border-warm-ivory/10 rounded-lg group">
+							<summary class="cursor-pointer p-5 text-warm-ivory font-semibold list-none flex justify-between items-center hover:text-spotlight-gold transition-colors">
+								<span>{q.name}</span>
+								<span class="text-spotlight-gold ml-4 group-open:rotate-45 transition-transform">+</span>
+							</summary>
+							<div class="px-5 pb-5 text-aged-cream">
+								{q.acceptedAnswer.text}
+							</div>
+						</details>
+					))}
+				</div>
+			</section>
 		</div>
 	</div>
 </Layout>
