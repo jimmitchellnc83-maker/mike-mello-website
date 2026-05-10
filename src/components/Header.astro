@@ -35,6 +35,7 @@ const isActive = (href: string) =>
           <li>
             <a
               href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
               class:list={[
                 'transition-colors text-sm lg:text-base',
                 isActive(item.href) ? 'text-spotlight-gold' : 'hover:text-spotlight-gold',
@@ -84,6 +85,7 @@ const isActive = (href: string) =>
           <li>
             <a
               href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
               class:list={[
                 'block py-3 px-3 rounded-md transition-colors',
                 isActive(item.href)

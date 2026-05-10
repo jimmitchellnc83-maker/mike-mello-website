@@ -190,6 +190,7 @@ if (schema) {
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content="Mike Mello performing on stage at Raleigh Improv" />
 		<meta name="twitter:creator" content="@MikeMelloComedy" />
 		<meta name="twitter:site" content="@MikeMelloComedy" />
 
@@ -202,8 +203,14 @@ if (schema) {
 		<ClientRouter />
 	</head>
 	<body class="flex flex-col min-h-screen bg-stage-black text-warm-ivory">
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-spotlight-gold focus:text-stage-black focus:font-bold focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg"
+		>
+			Skip to content
+		</a>
 		<Header />
-		<main class="flex-grow">
+		<main id="main-content" class="flex-grow">
 			<slot />
 		</main>
 		<Footer />
