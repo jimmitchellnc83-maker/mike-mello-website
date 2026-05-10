@@ -1,0 +1,18 @@
+{
+  "name": "Mike Mello — Stand-Up Comedian",
+  "short_name": "Mike Mello",
+  "description": "Stand-up comedian. 20+ years on the road. Two specials. Book Mike for clubs, colleges, corporate, private events, and hosting.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#0F0C09",
+  "theme_color": "#C98B2A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ]
+}

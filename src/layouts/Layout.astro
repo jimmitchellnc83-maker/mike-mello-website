@@ -8,12 +8,14 @@ interface Props {
   title?: string;
   description?: string;
   schema?: object | object[];
+  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage' | 'ProfilePage';
 }
 
 const {
   title = 'Mike Mello | Stand-Up Comedian | Booking Clubs, Colleges, Corporate, & Private Events',
   description = 'Mike Mello is a Raleigh, NC stand-up comedian with 20+ years on the road. NBC Stand-Up Diversity finalist. Two specials. Book Mike for clubs, colleges, corporate, private events, and hosting.',
-  schema
+  schema,
+  pageType = 'WebPage'
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -98,7 +100,49 @@ const serviceSchema = {
   }
 };
 
-const allSchema = [personSchema, websiteSchema, serviceSchema];
+// Per-page WebPage schema with proper subtype
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': pageType,
+  '@id': canonicalURL.toString() + '#webpage',
+  url: canonicalURL.toString(),
+  name: title,
+  description: description,
+  isPartOf: { '@id': 'https://mikemello.com/#website' },
+  about: { '@id': 'https://mikemello.com/#person' },
+  primaryImageOfPage: { '@type': 'ImageObject', url: ogImage },
+  inLanguage: 'en-US'
+};
+
+// Auto-generate BreadcrumbList from URL pathname (only on subpages)
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+let breadcrumbSchema: object | null = null;
+if (segments.length > 0) {
+  const items: object[] = [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mikemello.com/' }
+  ];
+  let path = '';
+  segments.forEach((seg, i) => {
+    path += '/' + seg;
+    const name = seg
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+    items.push({
+      '@type': 'ListItem',
+      position: i + 2,
+      name,
+      item: `https://mikemello.com${path}/`
+    });
+  });
+  breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items
+  };
+}
+
+const allSchema: object[] = [personSchema, websiteSchema, serviceSchema, webPageSchema];
+if (breadcrumbSchema) allSchema.push(breadcrumbSchema);
 if (schema) {
   if (Array.isArray(schema)) allSchema.push(...schema);
   else allSchema.push(schema);
@@ -116,8 +160,12 @@ if (schema) {
 		<link rel="icon" href="/favicon.svg" />
 		<link rel="apple-touch-icon" href="/favicon.svg" />
 		<link rel="mask-icon" href="/favicon.svg" color="#C98B2A" />
+		<link rel="manifest" href="/manifest.json" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#0F0C09" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="apple-mobile-web-app-title" content="Mike Mello" />
 		<title>{title}</title>
 
 		<!-- Fonts: Fraunces (display) + Switzer (body) -->

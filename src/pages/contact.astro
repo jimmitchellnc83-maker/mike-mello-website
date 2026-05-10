@@ -8,6 +8,10 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   '@id': 'https://mikemello.com/contact#faq',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['#faq summary', '#faq [data-faq-answer]']
+  },
   mainEntity: [
     {
       '@type': 'Question',
@@ -61,7 +65,7 @@ const faqSchema = {
 };
 ---
 
-<Layout title={title} description={description} schema={faqSchema}>
+<Layout title={title} description={description} schema={faqSchema} pageType="ContactPage">
 	<div class="container mx-auto px-4 py-12">
 		<h1 class="text-5xl font-bold text-center mb-4 text-warm-ivory">Book Mike</h1>
 		<p class="text-lg text-aged-cream text-center max-w-2xl mx-auto mb-12">
@@ -187,7 +191,7 @@ const faqSchema = {
 			</div>
 
 			<!-- FAQ -->
-			<section class="mt-16 max-w-3xl mx-auto">
+			<section class="mt-16 max-w-3xl mx-auto" id="faq">
 				<h2 class="text-3xl font-bold mb-8 text-spotlight-gold text-center">Booking FAQ</h2>
 				<div class="space-y-4">
 					{faqSchema.mainEntity.map((q) => (
@@ -196,7 +200,7 @@ const faqSchema = {
 								<span>{q.name}</span>
 								<span class="text-spotlight-gold ml-4 group-open:rotate-45 transition-transform">+</span>
 							</summary>
-							<div class="px-5 pb-5 text-aged-cream">
+							<div class="px-5 pb-5 text-aged-cream" data-faq-answer>
 								{q.acceptedAnswer.text}
 							</div>
 						</details>
