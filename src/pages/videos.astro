@@ -11,7 +11,6 @@ type VideoSchema = {
 };
 
 const youtubeVideos: VideoSchema[] = [
-  { id: 'weGJrmAUGSc', name: "What's Seasoning? — Mike Mello on HITKOR", description: "Mike Mello's second stand-up special, on HITKOR." },
   { id: 'CkCemJljinE', name: 'Mike Mello on Comedy Game Show, Episode 14', description: 'Mike Mello stand-up set on Comedy Game Show, Episode 14.' },
   { id: 'sHHqDC2QyKw', name: 'Mike Mello Miller on Comedy Game Show, Episode 27', description: 'Mike Mello Miller stand-up set on Comedy Game Show, Episode 27.' },
   { id: '7J7-9d8Ghdw', name: "Mello Mike: Crackheads and squirrels crossing the street", description: 'Mike Mello at the Laugh Your Asheville Off comedy festival.' },
@@ -36,28 +35,6 @@ const videoSchemas = youtubeVideos.map((v) => ({
 <Layout title={title} description={description} schema={videoSchemas}>
 	<div class="container mx-auto px-4 py-12">
 		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">Videos</h1>
-
-		<!-- Featured Special -->
-		<section class="mb-16">
-			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold text-center">Featured Special</h2>
-			<figure class="max-w-4xl mx-auto">
-				<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
-					<iframe
-						src="https://www.youtube.com/embed/weGJrmAUGSc?start=19"
-						title="What's Seasoning? — Mike Mello on HITKOR"
-						loading="lazy"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen
-						class="w-full h-full"
-					></iframe>
-				</div>
-				<figcaption class="mt-4 text-center">
-					<p class="text-xs uppercase tracking-widest text-smoke mb-2">Stand-Up Special</p>
-					<p class="text-2xl md:text-3xl font-bold italic text-spotlight-gold mb-1">What's Seasoning?</p>
-					<p class="text-aged-cream">Mike Mello's second stand-up special, on HITKOR.</p>
-				</figcaption>
-			</figure>
-		</section>
 
 		<!-- Stand-Up Clips -->
 		<section class="mb-16">
