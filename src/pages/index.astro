@@ -4,13 +4,6 @@ import Layout from '../layouts/Layout.astro';
 const title = 'Mike Mello | Stand-Up Comedian | Booking Clubs, Colleges, Corporate, & Private Events';
 const description = 'Mike Mello is a Raleigh, NC stand-up comedian with 20+ years on the road. NBC Stand-Up Diversity finalist. Two specials. Book Mike for clubs, colleges, corporate, private events, and hosting.';
 
-const stats = [
-  { value: '20+', label: 'Years on stage' },
-  { value: '2', label: 'Stand-up specials' },
-  { value: '6', label: 'Toured & opened for' },
-  { value: 'NBC', label: 'Diversity finalist' },
-];
-
 const eventTypes = [
   { name: 'Comedy Clubs', detail: 'Headliner & feature' },
   { name: 'Colleges & Universities', detail: 'Activities boards & lecture series' },
@@ -47,7 +40,7 @@ const proofPoints = [
 		<div class="relative container mx-auto px-4 text-center pb-14 md:pb-24 animate-rise-in">
 			<p class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-spotlight-gold/95 bg-spotlight-gold/10 border border-spotlight-gold/25 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
 				<span class="w-1.5 h-1.5 rounded-full bg-spotlight-gold"></span>
-				Raleigh, NC · Stand-Up Comedian
+				Stand-Up Comedian · Touring Nationally
 			</p>
 			<h1 class="text-5xl sm:text-7xl md:text-8xl font-bold mb-2 text-warm-ivory [text-shadow:0_2px_24px_rgba(0,0,0,0.7)]">
 				Mike Mello
@@ -58,7 +51,7 @@ const proofPoints = [
 				<span class="block h-px w-12 sm:w-20 bg-gradient-to-l from-transparent to-spotlight-gold/60"></span>
 			</div>
 			<p class="text-base md:text-lg text-warm-ivory/95 mb-10 max-w-2xl mx-auto [text-shadow:0_1px_6px_rgba(0,0,0,0.85)]">
-				20+ years on the road. Shared stages with Tracy Morgan, Russell Peters, and Dave Chappelle.
+				Two specials. NBC Stand-Up Diversity finalist. 20+ years on stage.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-3 justify-center">
 				<a href="/contact" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors shadow-xl shadow-spotlight-gold/30">
@@ -71,17 +64,22 @@ const proofPoints = [
 		</div>
 	</section>
 
-	<!-- Stats Row -->
-	<section class="bg-stage-black border-y border-warm-ivory/10" aria-label="By the numbers">
-		<div class="container mx-auto">
-			<div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-warm-ivory/10">
-				{stats.map((s) => (
-					<div class="px-4 py-8 md:py-10 text-center">
-						<p class="font-display font-bold text-4xl md:text-5xl text-spotlight-gold mb-2 leading-none" style="font-variation-settings: 'SOFT' 60;">{s.value}</p>
-						<p class="text-xs uppercase tracking-[0.18em] text-aged-cream">{s.label}</p>
-					</div>
-				))}
+	<!-- Billing: shared stages + press quote -->
+	<section class="bg-stage-black border-y border-warm-ivory/10 py-16 md:py-24 section-glow" aria-label="Career highlights">
+		<div class="container mx-auto px-4 max-w-4xl text-center">
+			<p class="text-xs uppercase tracking-[0.22em] text-smoke mb-5">Shared stages with</p>
+			<p class="font-display font-bold text-3xl md:text-5xl text-warm-ivory leading-[1.08]" style="font-variation-settings: 'SOFT' 40;">
+				Tracy Morgan, Russell Peters, Dave Chappelle, Ralphie May, D.L. Hughley, &amp; Damon Wayans.
+			</p>
+			<div class="flex items-center justify-center gap-3 my-10" aria-hidden="true">
+				<span class="block h-px w-12 sm:w-20 bg-gradient-to-r from-transparent to-spotlight-gold/60"></span>
+				<span class="block w-1.5 h-1.5 rounded-full bg-spotlight-gold"></span>
+				<span class="block h-px w-12 sm:w-20 bg-gradient-to-l from-transparent to-spotlight-gold/60"></span>
 			</div>
+			<blockquote class="font-display italic text-xl md:text-2xl text-aged-cream max-w-2xl mx-auto leading-snug" style="font-variation-settings: 'SOFT' 60;">
+				"One of the most respected comedians in the community."
+			</blockquote>
+			<p class="mt-4 text-xs uppercase tracking-[0.22em] text-spotlight-gold">INDY Week</p>
 		</div>
 	</section>
 
