@@ -11,6 +11,7 @@ type VideoSchema = {
 };
 
 const youtubeVideos: VideoSchema[] = [
+  { id: 'weGJrmAUGSc', name: "What's Seasoning? — Mike Mello on HITKOR", description: "Mike Mello's second stand-up special, on HITKOR." },
   { id: 'CkCemJljinE', name: 'Mike Mello on Comedy Game Show, Episode 14', description: 'Mike Mello stand-up set on Comedy Game Show, Episode 14.' },
   { id: 'sHHqDC2QyKw', name: 'Mike Mello Miller on Comedy Game Show, Episode 27', description: 'Mike Mello Miller stand-up set on Comedy Game Show, Episode 27.' },
   { id: '7J7-9d8Ghdw', name: "Mello Mike: Crackheads and squirrels crossing the street", description: 'Mike Mello at the Laugh Your Asheville Off comedy festival.' },
@@ -36,64 +37,26 @@ const videoSchemas = youtubeVideos.map((v) => ({
 	<div class="container mx-auto px-4 py-12">
 		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">Videos</h1>
 
-		<!-- Featured -->
+		<!-- Featured Special -->
 		<section class="mb-16">
-			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Featured</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-				<a
-					href="https://www.imdb.com/title/tt7971376/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="group relative bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg md:aspect-video min-h-[260px] overflow-hidden transition-colors"
-				>
-					<img
-						src="/images/incognegro-poster.jpg"
-						alt="Mike Mello, Incognegro 2018 special poster"
-						class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity"
+			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold text-center">Featured Special</h2>
+			<figure class="max-w-4xl mx-auto">
+				<div class="aspect-video rounded-lg overflow-hidden border border-warm-ivory/10 bg-amber-shadow">
+					<iframe
+						src="https://www.youtube.com/embed/weGJrmAUGSc?start=19"
+						title="What's Seasoning? — Mike Mello on HITKOR"
 						loading="lazy"
-					/>
-					<div class="absolute inset-0 bg-gradient-to-t from-stage-black via-stage-black/70 to-stage-black/40"></div>
-					<div class="relative h-full flex flex-col items-center justify-center text-center p-6">
-						<p class="text-xs uppercase tracking-widest text-smoke mb-3">Stand-Up Special · 2018</p>
-						<p class="text-2xl md:text-3xl font-bold italic text-spotlight-gold mb-2">Incognegro</p>
-						<p class="text-aged-cream text-sm mb-4">Hour-long original. Written by Mike Mello, directed by Tye Banks.</p>
-						<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">View on IMDB &rarr;</p>
-					</div>
-				</a>
-
-				<a
-					href="https://www.instagram.com/officialhitkor/reel/C1-1zqtJai9/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="group relative bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg md:aspect-video min-h-[260px] overflow-hidden transition-colors"
-				>
-					<img
-						src="/images/whats-seasoning-poster.jpg"
-						alt="Mike Mello, What's Seasoning? special on HITKOR"
-						class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity"
-						loading="lazy"
-					/>
-					<div class="absolute inset-0 bg-gradient-to-t from-stage-black via-stage-black/70 to-stage-black/40"></div>
-					<div class="relative h-full flex flex-col items-center justify-center text-center p-6">
-						<p class="text-xs uppercase tracking-widest text-smoke mb-3">Stand-Up Special</p>
-						<p class="text-2xl md:text-3xl font-bold italic text-spotlight-gold mb-2">What's Seasoning?</p>
-						<p class="text-aged-cream text-sm mb-4">Second special, streaming on HITKOR.</p>
-						<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">Watch on HITKOR &rarr;</p>
-					</div>
-				</a>
-
-				<a
-					href="https://www.imdb.com/title/tt31500128/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="group bg-amber-shadow border border-warm-ivory/10 hover:border-spotlight-gold rounded-lg md:aspect-video min-h-[200px] flex flex-col items-center justify-center text-center p-6 transition-colors"
-				>
-					<p class="text-xs uppercase tracking-widest text-smoke mb-3">TV Appearance · 2022</p>
-					<p class="text-2xl font-bold italic text-spotlight-gold mb-2">D.L. Hughley's Speakeasy</p>
-					<p class="text-aged-cream text-sm mb-4">Featured comic on D.L. Hughley's stand-up showcase.</p>
-					<p class="text-spotlight-gold group-hover:text-stage-amber font-semibold text-sm">View on IMDB &rarr;</p>
-				</a>
-			</div>
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+						class="w-full h-full"
+					></iframe>
+				</div>
+				<figcaption class="mt-4 text-center">
+					<p class="text-xs uppercase tracking-widest text-smoke mb-2">Stand-Up Special</p>
+					<p class="text-2xl md:text-3xl font-bold italic text-spotlight-gold mb-1">What's Seasoning?</p>
+					<p class="text-aged-cream">Mike Mello's second stand-up special, on HITKOR.</p>
+				</figcaption>
+			</figure>
 		</section>
 
 		<!-- Stand-Up Clips -->
