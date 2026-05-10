@@ -4,6 +4,13 @@ import Layout from '../layouts/Layout.astro';
 const title = 'Mike Mello | Stand-Up Comedian | Booking Clubs, Colleges, Corporate, & Private Events';
 const description = 'Mike Mello is a Raleigh, NC stand-up comedian with 20+ years on the road. NBC Stand-Up Diversity finalist. Two specials. Book Mike for clubs, colleges, corporate, private events, and hosting.';
 
+const stats = [
+  { value: '20+', label: 'Years on stage' },
+  { value: '2', label: 'Stand-up specials' },
+  { value: '6', label: 'Toured & opened for' },
+  { value: 'NBC', label: 'Diversity finalist' },
+];
+
 const eventTypes = [
   { name: 'Comedy Clubs', detail: 'Headliner & feature' },
   { name: 'Colleges & Universities', detail: 'Activities boards & lecture series' },
@@ -26,46 +33,67 @@ const proofPoints = [
 
 <Layout title={title} description={description}>
 	<!-- Hero Section -->
-	<section class="relative bg-stage-black overflow-hidden min-h-[75vh] md:min-h-[85vh] flex items-end">
+	<section class="relative bg-stage-black overflow-hidden min-h-[80vh] md:min-h-[88vh] flex items-end">
 		<div class="absolute inset-0" aria-hidden="true">
 			<img
 				src="/images/raleigh-improv-stage.jpg"
 				alt=""
-				class="w-full h-full object-cover object-[center_25%] opacity-90"
+				class="w-full h-full object-cover object-[center_25%] opacity-90 animate-ken-burns"
 				loading="eager"
 			/>
 			<div class="absolute inset-0 bg-gradient-to-b from-stage-black/10 via-stage-black/30 to-stage-black"></div>
+			<div class="absolute inset-0 hero-spotlight"></div>
 		</div>
-		<div class="relative container mx-auto px-4 text-center pb-12 md:pb-20">
-			<h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 text-warm-ivory [text-shadow:0_2px_16px_rgba(0,0,0,0.7)]">
+		<div class="relative container mx-auto px-4 text-center pb-14 md:pb-24 animate-rise-in">
+			<p class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-spotlight-gold/95 bg-spotlight-gold/10 border border-spotlight-gold/25 rounded-full px-4 py-1.5 mb-6 backdrop-blur-sm">
+				<span class="w-1.5 h-1.5 rounded-full bg-spotlight-gold"></span>
+				Raleigh, NC · Stand-Up Comedian
+			</p>
+			<h1 class="text-5xl sm:text-7xl md:text-8xl font-bold mb-2 text-warm-ivory [text-shadow:0_2px_24px_rgba(0,0,0,0.7)]">
 				Mike Mello
 			</h1>
-			<p class="text-xl md:text-2xl text-aged-cream mb-3 [text-shadow:0_1px_8px_rgba(0,0,0,0.8)]">
-				Stand-Up Comedian
-			</p>
-			<p class="text-base md:text-lg text-warm-ivory/90 mb-10 max-w-2xl mx-auto [text-shadow:0_1px_6px_rgba(0,0,0,0.8)]">
+			<div class="flex items-center justify-center gap-3 my-6" aria-hidden="true">
+				<span class="block h-px w-12 sm:w-20 bg-gradient-to-r from-transparent to-spotlight-gold/60"></span>
+				<span class="block w-1.5 h-1.5 rounded-full bg-spotlight-gold"></span>
+				<span class="block h-px w-12 sm:w-20 bg-gradient-to-l from-transparent to-spotlight-gold/60"></span>
+			</div>
+			<p class="text-base md:text-lg text-warm-ivory/95 mb-10 max-w-2xl mx-auto [text-shadow:0_1px_6px_rgba(0,0,0,0.85)]">
 				20+ years on the road. Shared stages with Tracy Morgan, Russell Peters, and Dave Chappelle.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-3 justify-center">
-				<a href="/contact" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors shadow-xl">
+				<a href="/contact" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors shadow-xl shadow-spotlight-gold/30">
 					Book Mike
 				</a>
-				<a href="/videos" class="inline-block bg-transparent border border-warm-ivory/30 text-warm-ivory hover:bg-warm-ivory/10 font-bold py-3 px-8 rounded-lg transition-colors">
+				<a href="/videos" class="inline-block bg-transparent border border-warm-ivory/40 text-warm-ivory hover:bg-warm-ivory/10 hover:border-warm-ivory/60 font-bold py-3 px-8 rounded-lg transition-colors backdrop-blur-sm">
 					Watch a Clip
 				</a>
 			</div>
 		</div>
 	</section>
 
+	<!-- Stats Row -->
+	<section class="bg-stage-black border-y border-warm-ivory/10" aria-label="By the numbers">
+		<div class="container mx-auto">
+			<div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-warm-ivory/10">
+				{stats.map((s) => (
+					<div class="px-4 py-8 md:py-10 text-center">
+						<p class="font-display font-bold text-4xl md:text-5xl text-spotlight-gold mb-2 leading-none" style="font-variation-settings: 'SOFT' 60;">{s.value}</p>
+						<p class="text-xs uppercase tracking-[0.18em] text-aged-cream">{s.label}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
 	<!-- Trust Strip -->
-	<section class="bg-warm-dark border-y border-warm-ivory/10 py-8" aria-label="As seen on">
+	<section class="bg-warm-dark border-b border-warm-ivory/10 py-8" aria-label="As seen on">
 		<div class="container mx-auto px-4">
-			<p class="text-xs uppercase tracking-widest text-smoke text-center mb-5">As seen on, heard on</p>
+			<p class="text-xs uppercase tracking-[0.22em] text-smoke text-center mb-5">As seen on, heard on</p>
 			<ul class="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-8 gap-y-3 text-center list-none">
 				{proofPoints.map((p, i) => (
 					<>
 						<li class="text-warm-ivory/85 text-base md:text-lg">{p}</li>
-						{i < proofPoints.length - 1 && <li class="text-warm-ivory/30" aria-hidden="true">·</li>}
+						{i < proofPoints.length - 1 && <li class="text-spotlight-gold/40" aria-hidden="true">•</li>}
 					</>
 				))}
 			</ul>
@@ -73,10 +101,10 @@ const proofPoints = [
 	</section>
 
 	<!-- Hire Mike for Your Stage -->
-	<section class="py-16 md:py-24" id="hire">
+	<section class="py-16 md:py-24 section-glow" id="hire">
 		<div class="container mx-auto px-4 max-w-5xl">
 			<div class="text-center mb-10 md:mb-14">
-				<p class="text-xs uppercase tracking-widest text-smoke mb-3">Hire Mike</p>
+				<p class="text-xs uppercase tracking-[0.22em] text-smoke mb-3">Hire Mike</p>
 				<h2 class="text-4xl md:text-5xl font-bold text-warm-ivory mb-4">Where Mike performs</h2>
 				<p class="text-lg text-aged-cream max-w-2xl mx-auto">
 					Comedy clubs, colleges, corporate events, private parties, hosting, and festivals. 20+ years of stand-up.
@@ -84,14 +112,14 @@ const proofPoints = [
 			</div>
 			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
 				{eventTypes.map((e) => (
-					<div class="bg-dim-house border border-warm-ivory/10 rounded-lg p-5 text-center hover:border-spotlight-gold/40 transition-colors">
+					<div class="premium-card bg-dim-house border border-warm-ivory/10 rounded-lg p-5 text-center">
 						<p class="text-warm-ivory font-semibold text-lg mb-1">{e.name}</p>
 						<p class="text-aged-cream text-sm">{e.detail}</p>
 					</div>
 				))}
 			</div>
 			<div class="text-center">
-				<a href="/contact" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-4 px-10 rounded-lg transition-colors text-lg shadow-xl">
+				<a href="/contact" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-4 px-10 rounded-lg transition-colors text-lg shadow-xl shadow-spotlight-gold/30">
 					Send a Booking Inquiry
 				</a>
 				<p class="text-sm text-smoke mt-3">Typical response within 48 hours</p>
@@ -100,17 +128,17 @@ const proofPoints = [
 	</section>
 
 	<!-- On the Road -->
-	<section class="bg-warm-dark py-16 border-t border-warm-ivory/10">
+	<section class="bg-warm-dark py-16 border-t border-warm-ivory/10 section-glow">
 		<div class="container mx-auto px-4 text-center">
 			<h2 class="text-4xl font-bold mb-4 text-warm-ivory">On the Road</h2>
 			<p class="text-lg text-aged-cream mb-8 max-w-2xl mx-auto">
 				Charlie Goodnight's. Segra Stadium. Plenty of stages between. Follow along for the next set of dates.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<a href="/tour" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors">
+				<a href="/tour" class="inline-block bg-spotlight-gold hover:bg-stage-amber text-stage-black font-bold py-3 px-8 rounded-lg transition-colors shadow-md shadow-spotlight-gold/20">
 					Tour Dates
 				</a>
-				<a href="https://www.instagram.com/mikemellomiller/" target="_blank" rel="noopener noreferrer" class="inline-block bg-transparent border border-warm-ivory/20 text-warm-ivory hover:bg-warm-ivory/10 font-bold py-3 px-8 rounded-lg transition-colors">
+				<a href="https://www.instagram.com/mikemellomiller/" target="_blank" rel="noopener noreferrer" class="inline-block bg-transparent border border-warm-ivory/30 text-warm-ivory hover:bg-warm-ivory/10 hover:border-warm-ivory/50 font-bold py-3 px-8 rounded-lg transition-colors">
 					Follow @mikemellomiller
 				</a>
 			</div>

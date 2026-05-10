@@ -21,6 +21,7 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-rendering: optimizeLegibility;
+		scroll-behavior: smooth;
 	}
 	body {
 		font-family: var(--font-sans);
@@ -36,5 +37,64 @@
 		font-family: var(--font-display);
 		font-optical-sizing: auto;
 		font-variation-settings: 'SOFT' 50;
+	}
+	::selection {
+		background: var(--color-spotlight-gold);
+		color: var(--color-stage-black);
+	}
+	a {
+		transition: color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+}
+
+@layer utilities {
+	/* Slow Ken Burns drift for hero imagery — gives the photo a subtle, cinematic life. */
+	@keyframes ken-burns {
+		0%, 100% { transform: scale(1.02) translate(0%, 0%); }
+		50%      { transform: scale(1.08) translate(-1%, -1%); }
+	}
+	.animate-ken-burns {
+		animation: ken-burns 32s ease-in-out infinite;
+	}
+
+	/* Soft fade-in for sections when they reach the viewport. */
+	@keyframes rise-in {
+		0%   { opacity: 0; transform: translateY(12px); }
+		100% { opacity: 1; transform: translateY(0); }
+	}
+	.animate-rise-in {
+		animation: rise-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	/* Premium card hover: slight lift, gold border, soft amber shadow. */
+	.premium-card {
+		transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+		            border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+		            box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.premium-card:hover {
+		transform: translateY(-2px);
+		border-color: rgba(201, 139, 42, 0.55);
+		box-shadow: 0 18px 40px -16px rgba(201, 139, 42, 0.25);
+	}
+
+	/* Ambient gold radial wash applied to wrapping sections. */
+	.section-glow {
+		background:
+			radial-gradient(ellipse 80% 60% at 90% 0%, rgba(201, 139, 42, 0.05), transparent 60%),
+			radial-gradient(ellipse 80% 60% at 0% 100%, rgba(201, 139, 42, 0.04), transparent 60%);
+	}
+
+	/* Stage-spotlight glow rising from the floor of the hero. */
+	.hero-spotlight {
+		background: radial-gradient(circle at 50% 90%, rgba(201, 139, 42, 0.10), transparent 45%);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.animate-ken-burns,
+		.animate-rise-in {
+			animation: none !important;
+		}
+		html { scroll-behavior: auto; }
 	}
 }
