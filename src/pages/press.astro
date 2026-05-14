@@ -1,10 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// ItemList of press coverage — articles ABOUT Mike that AI answer engines can cite.
+const coverage = [
+	{
+		headline: '"One of the most respected comedians in the community"',
+		publisher: 'INDY Week',
+		datePublished: '2023',
+		author: 'Craig Lindsey',
+		url: 'https://indyweek.com/culture/art/mello-mike-miller-carries-cary-comedy-back-mac-s-tavern/'
+	},
+	{
+		headline: 'Mellow Humor',
+		publisher: 'Raleigh Magazine',
+		datePublished: '2018-11',
+		url: 'https://raleighmag.com/2018/11/mellow-humor/'
+	},
+	{
+		headline: 'Mike Mello celebrates 15 years in stand-up',
+		publisher: 'WRAL',
+		url: 'https://www.wral.com/mike-mello-celebrates-15-years-in-stand-up/17134036/'
+	},
+	{
+		headline: 'The Cary Podcast: Episode 37 — Comedian Mike Mello Miller',
+		publisher: 'The Cary Podcast',
+		datePublished: '2025-07',
+		url: 'https://carypodcast.libsyn.com/episode-37-comedian-mike-mello-miller'
+	}
+];
+
+const pressSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'ItemList',
+	'@id': 'https://mikemello.com/press/#coverage',
+	name: 'Mike Mello press coverage',
+	itemListOrder: 'https://schema.org/ItemListOrderDescending',
+	numberOfItems: coverage.length,
+	itemListElement: coverage.map((c, i) => ({
+		'@type': 'ListItem',
+		position: i + 1,
+		item: {
+			'@type': c.publisher === 'The Cary Podcast' ? 'PodcastEpisode' : 'NewsArticle',
+			headline: c.headline,
+			url: c.url,
+			about: { '@id': 'https://mikemello.com/#person' },
+			publisher: { '@type': 'Organization', name: c.publisher },
+			...(c.author ? { author: { '@type': 'Person', name: c.author } } : {}),
+			...(c.datePublished ? { datePublished: c.datePublished } : {})
+		}
+	}))
+};
 ---
 
-<Layout title="Mike Mello Press Kit, Bio, & Media Coverage" description="Mike Mello press kit, official bio, photos, and media coverage from INDY Week, Raleigh Magazine, WRAL, and The Cary Podcast. For promoters, journalists, and bookers." pageType="CollectionPage">
+<Layout title="Mike Mello Press Kit, Bio, & Media Coverage" description="Mike Mello press kit, official bio, photos, and media coverage from INDY Week, Raleigh Magazine, WRAL, and The Cary Podcast. For promoters, journalists, and bookers." pageType="CollectionPage" schema={pressSchema}>
 	<div class="container mx-auto px-4 py-12">
-		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">Press</h1>
+		<h1 class="text-4xl sm:text-5xl font-bold text-center mb-12 text-warm-ivory">Press</h1>
 
 		<div class="max-w-4xl mx-auto">
 			<!-- Press Kit -->
@@ -32,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
 					<p class="text-warm-ivory mb-4">
 						Craig Lindsey's profile of Mike's career, his start at Charlie Goodnight's, and the open mic he hosts in the Triangle.
 					</p>
-					<a href="https://indyweek.com/culture/art/mello-mike-miller-carries-cary-comedy-back-mac-s-tavern/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber font-semibold">Read more →</a>
+					<a href="https://indyweek.com/culture/art/mello-mike-miller-carries-cary-comedy-back-mac-s-tavern/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber font-semibold">Read the INDY Week profile →</a>
 				</article>
 
 				<article class="premium-card bg-dim-house border border-warm-ivory/10 p-8 rounded-lg mb-6">
@@ -43,7 +93,7 @@ import Layout from '../layouts/Layout.astro';
 					<p class="text-warm-ivory mb-4">
 						Feature on Mike's voice and career around the release of <em>Incognegro</em>.
 					</p>
-					<a href="https://raleighmag.com/2018/11/mellow-humor/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber font-semibold">Read more →</a>
+					<a href="https://raleighmag.com/2018/11/mellow-humor/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber font-semibold">Read the Raleigh Magazine feature →</a>
 				</article>
 
 				<article class="premium-card bg-dim-house border border-warm-ivory/10 p-8 rounded-lg mb-6">
@@ -54,7 +104,7 @@ import Layout from '../layouts/Layout.astro';
 					<p class="text-warm-ivory mb-4">
 						Profile marking 15 years on stage, looking back at the road from Charlie Goodnight's onward.
 					</p>
-					<a href="https://www.wral.com/mike-mello-celebrates-15-years-in-stand-up/17134036/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber font-semibold">Read more →</a>
+					<a href="https://www.wral.com/mike-mello-celebrates-15-years-in-stand-up/17134036/" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber font-semibold">Read the WRAL profile →</a>
 				</article>
 
 				<article class="premium-card bg-dim-house border border-warm-ivory/10 p-8 rounded-lg mb-6">
@@ -65,7 +115,7 @@ import Layout from '../layouts/Layout.astro';
 					<p class="text-warm-ivory mb-4">
 						A long-form conversation with Mike on growing up in Cary, getting started in stand-up, and the comics he's worked with.
 					</p>
-					<a href="https://carypodcast.libsyn.com/episode-37-comedian-mike-mello-miller" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber font-semibold">Listen →</a>
+					<a href="https://carypodcast.libsyn.com/episode-37-comedian-mike-mello-miller" target="_blank" rel="noopener noreferrer" class="text-spotlight-gold hover:text-stage-amber font-semibold">Listen to Episode 37 →</a>
 				</article>
 			</section>
 		</div>

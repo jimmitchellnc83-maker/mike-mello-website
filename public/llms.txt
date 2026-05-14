@@ -2,12 +2,15 @@
 
 Stand-up comedian based in Raleigh, North Carolina, with 20+ years on the road.
 
+> Two specials. NBC Stand-Up Diversity Showcase finalist. Toured with Tracy Morgan and Russell Peters. Opened for Dave Chappelle, Ralphie May, D.L. Hughley, and Damon Wayans. Available for clubs, colleges, corporate, private events, festivals, and hosting nationwide.
+
 ## Identity
 
 - Performing name: Mike Mello (also known as Mello Mike, Mike Mello Miller)
 - Real name: Michael Miller
 - Born in Virginia. Spent ~25 years in Cary, NC. Now based in Raleigh, NC.
 - Started his career at Charlie Goodnight's Comedy Club in Raleigh
+- Official site: https://mikemello.com
 
 ## Career credits
 
@@ -17,6 +20,7 @@ Stand-up comedian based in Raleigh, North Carolina, with 20+ years on the road.
 - Heard on SiriusXM Radio
 - Toured with Tracy Morgan and Russell Peters
 - Opened for Dave Chappelle, Ralphie May, D.L. Hughley, and Damon Wayans
+- Headlined Charlie Goodnight's, The Idiot Box, SECCA, and Segra Stadium
 - IMDB: https://www.imdb.com/name/nm9610033/
 
 ## Press
@@ -28,12 +32,12 @@ Stand-up comedian based in Raleigh, North Carolina, with 20+ years on the road.
 
 ## Site structure
 
-- /         Home (hero, what's going on, tour preview)
+- /         Home (hero, trust strip, event types, tour CTA)
 - /about    Bio, full credits list, press blurb
-- /tour     Tour status and recent venue highlights
-- /videos   Featured specials, stand-up clips, podcast appearances
+- /tour     Tour status (new dates being booked)
+- /videos   Stand-up clips and TV appearances
 - /press    Press kit and coverage
-- /contact  Booking inquiries (form), social links
+- /contact  Booking inquiries (form), FAQ, social links
 
 ## How to reach Mike
 
@@ -45,3 +49,31 @@ Stand-up comedian based in Raleigh, North Carolina, with 20+ years on the road.
 ## What Mike does
 
 Mike Mello is a working stand-up comedian. He headlines comedy clubs, performs at festivals, books private and corporate events, and hosts. His style is laid-back and observational, with a smooth delivery shaped by 20+ years on stages from Raleigh to Los Angeles.
+
+## Common questions
+
+### Who is Mike Mello?
+Mike Mello is a Raleigh, North Carolina stand-up comedian with 20+ years on the road. He is an NBC Stand-Up Diversity Showcase finalist and has released two specials, *Incognegro* (2018) and *What's Seasoning?* on HITKOR.
+
+### How do I book Mike Mello?
+Submit a booking inquiry at https://mikemello.com/contact or DM @mikemellomiller on Instagram. Include the event date, city, venue, audience size, tone (clean, club, or private), and budget. Typical response within 48 hours.
+
+### Where is Mike Mello based?
+Raleigh, North Carolina. He tours nationally.
+
+### What types of events does Mike perform at?
+Comedy clubs (headliner and feature), college and university shows, corporate events, private parties (birthdays, weddings, holiday events), festivals, and hosting / emcee work for galas, fundraisers, and award shows.
+
+### Does Mike do clean material?
+Yes. Mike tailors his set to the room and is comfortable performing clean, corporate-friendly material when the audience requires it.
+
+### How long are Mike's sets?
+Sets are flexible: 5 to 10 minute spots, 30 to 45 minute features, 45 to 60 minute headlining sets, or full 90 minute solo shows. Hosting blocks are tailored to the event run-of-show.
+
+### Who has Mike performed with?
+Mike has toured with Tracy Morgan and Russell Peters and opened for Dave Chappelle, Ralphie May, D.L. Hughley, and Damon Wayans.
+
+### Where can I watch Mike's stand-up?
+- *Incognegro* (2018): see IMDB tt7971376
+- *What's Seasoning?*: streaming on HITKOR
+- Clips and TV appearances: https://mikemello.com/videos and Instagram @mikemellomiller

@@ -20,17 +20,63 @@ const proofPoints = [
   'IMDB',
   'WRAL',
 ];
+
+// CreativeWork schemas for the two specials — enriches Mike's entity profile for AI answer engines
+const incognegroSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TVSpecial',
+  '@id': 'https://mikemello.com/#incognegro',
+  name: 'Incognegro',
+  alternateName: 'Mike Mello: Incognegro',
+  description: "Mike Mello's hour-long stand-up special, released in 2018.",
+  datePublished: '2018',
+  genre: ['Stand-up comedy', 'Comedy'],
+  inLanguage: 'en-US',
+  performer: { '@id': 'https://mikemello.com/#person' },
+  creator: { '@id': 'https://mikemello.com/#person' },
+  sameAs: 'https://www.imdb.com/title/tt7971376/'
+};
+
+const whatsSeasoningSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TVSpecial',
+  '@id': 'https://mikemello.com/#whats-seasoning',
+  name: "What's Seasoning?",
+  alternateName: "Mike Mello: What's Seasoning?",
+  description: "Mike Mello's second hour-long stand-up special, streaming on HITKOR.",
+  genre: ['Stand-up comedy', 'Comedy'],
+  inLanguage: 'en-US',
+  performer: { '@id': 'https://mikemello.com/#person' },
+  creator: { '@id': 'https://mikemello.com/#person' }
+};
+
+// Mention Mike's role on D.L. Hughley's Speakeasy
+const speakeasySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TVEpisode',
+  '@id': 'https://mikemello.com/#speakeasy',
+  name: "D.L. Hughley's Speakeasy: Comedy Overload",
+  datePublished: '2022',
+  genre: 'Comedy',
+  actor: { '@id': 'https://mikemello.com/#person' }
+};
+
+const homeSchemas = [incognegroSchema, whatsSeasoningSchema, speakeasySchema];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={homeSchemas} preloadHero={true}>
 	<!-- Hero Section -->
 	<section class="relative bg-stage-black overflow-hidden min-h-[80vh] md:min-h-[88vh] flex items-end">
 		<div class="absolute inset-0" aria-hidden="true">
 			<img
 				src="/images/raleigh-improv-stage.jpg"
 				alt=""
+				width="1600"
+				height="900"
 				class="w-full h-full object-cover object-[center_25%] opacity-90 animate-ken-burns"
 				loading="eager"
+				fetchpriority="high"
+				decoding="async"
 			/>
 			<div class="absolute inset-0 bg-gradient-to-b from-stage-black/10 via-stage-black/30 to-stage-black"></div>
 			<div class="absolute inset-0 hero-spotlight"></div>
@@ -40,7 +86,7 @@ const proofPoints = [
 				<span class="w-1.5 h-1.5 rounded-full bg-spotlight-gold"></span>
 				Stand-Up Comedian · Touring Nationally
 			</p>
-			<h1 class="text-5xl sm:text-7xl md:text-8xl font-bold mb-2 text-warm-ivory [text-shadow:0_2px_24px_rgba(0,0,0,0.7)]">
+			<h1 class="text-6xl sm:text-7xl md:text-8xl font-bold mb-2 text-warm-ivory [text-shadow:0_2px_24px_rgba(0,0,0,0.7)]">
 				Mike Mello
 			</h1>
 			<div class="flex items-center justify-center gap-3 my-6" aria-hidden="true">

@@ -67,7 +67,7 @@ const faqSchema = {
 
 <Layout title={title} description={description} schema={faqSchema} pageType="ContactPage">
 	<div class="container mx-auto px-4 py-12">
-		<h1 class="text-5xl font-bold text-center mb-4 text-warm-ivory">Book Mike</h1>
+		<h1 class="text-4xl sm:text-5xl font-bold text-center mb-4 text-warm-ivory">Book Mike</h1>
 		<p class="text-lg text-aged-cream text-center max-w-2xl mx-auto mb-12">
 			Clubs, colleges, corporate, private events, hosting, and festivals. Based in Raleigh, NC. Touring nationally.
 		</p>
@@ -129,7 +129,9 @@ const faqSchema = {
 									type="text"
 									id="name"
 									name="name"
-									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
+									autocomplete="name"
+									autocapitalize="words"
+									class="w-full px-4 py-3 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 									required
 								/>
 							</div>
@@ -140,7 +142,11 @@ const faqSchema = {
 									type="email"
 									id="email"
 									name="email"
-									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
+									autocomplete="email"
+									inputmode="email"
+									autocapitalize="off"
+									spellcheck="false"
+									class="w-full px-4 py-3 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 									required
 								/>
 							</div>
@@ -150,7 +156,7 @@ const faqSchema = {
 								<select
 									id="reason"
 									name="reason"
-									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
+									class="w-full px-4 py-3 bg-stage-black border border-warm-ivory/10 text-warm-ivory rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 								>
 									<option>Comedy club booking</option>
 									<option>College / university show</option>
@@ -170,7 +176,7 @@ const faqSchema = {
 									name="message"
 									rows="5"
 									placeholder="Date, city, venue, audience size, tone (clean, club, private), and ballpark budget. Anything else Mike should know."
-									class="w-full px-4 py-2 bg-stage-black border border-warm-ivory/10 text-warm-ivory placeholder-smoke rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
+									class="w-full px-4 py-3 bg-stage-black border border-warm-ivory/10 text-warm-ivory placeholder-smoke rounded-lg focus:ring-2 focus:ring-spotlight-gold focus:border-transparent"
 									required
 								></textarea>
 							</div>

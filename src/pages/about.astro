@@ -1,14 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// ProfilePage adds Speakable so voice assistants can read Mike's bio aloud.
+const aboutSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'ProfilePage',
+	'@id': 'https://mikemello.com/about/#profile',
+	mainEntity: { '@id': 'https://mikemello.com/#person' },
+	speakable: {
+		'@type': 'SpeakableSpecification',
+		cssSelector: ['#about-bio', '#about-credits']
+	}
+};
 ---
 
-<Layout title="About Mike Mello | 20+ Year Stand-Up Comedian, Raleigh NC | NBC Diversity Finalist" description="Mike Mello is a Raleigh, NC stand-up comedian with 20+ years on the road. NBC Stand-Up Diversity finalist. Toured with Tracy Morgan and Russell Peters. Opened for Chappelle, Ralphie May, Damon Wayans, D.L. Hughley. Two specials. Started at Charlie Goodnight's." pageType="AboutPage">
+<Layout title="About Mike Mello | 20+ Year Stand-Up Comedian, Raleigh NC | NBC Diversity Finalist" description="Mike Mello is a Raleigh, NC stand-up comedian with 20+ years on the road. NBC Stand-Up Diversity finalist. Toured with Tracy Morgan and Russell Peters. Opened for Chappelle, Ralphie May, Damon Wayans, D.L. Hughley. Two specials. Started at Charlie Goodnight's." pageType="ProfilePage" schema={aboutSchema}>
 	<div class="container mx-auto px-4 py-12">
-		<h1 class="text-5xl font-bold text-center mb-12 text-warm-ivory">About</h1>
+		<h1 class="text-4xl sm:text-5xl font-bold text-center mb-12 text-warm-ivory">About</h1>
 
 		<!-- Bio -->
-		<section class="mb-16 max-w-5xl mx-auto">
-			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Bio</h2>
+		<section class="mb-16 max-w-5xl mx-auto" aria-labelledby="bio-heading">
+			<h2 id="bio-heading" class="text-3xl font-bold mb-6 text-spotlight-gold">Bio</h2>
 			<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
 				<div class="md:col-span-2">
 					<img
@@ -17,10 +29,11 @@ import Layout from '../layouts/Layout.astro';
 						width="1086"
 						height="923"
 						loading="lazy"
+						decoding="async"
 						class="rounded-lg border border-warm-ivory/10 w-full h-full object-cover"
 					/>
 				</div>
-				<div class="md:col-span-3 bg-dim-house border border-warm-ivory/10 p-8 rounded-lg">
+				<div id="about-bio" class="md:col-span-3 bg-dim-house border border-warm-ivory/10 p-8 rounded-lg">
 					<p class="text-warm-ivory mb-4">
 						A self-described "black hippie" (per <em>INDY Week</em>) with 20+ years in stand-up, Mike Mello got his start at Charlie Goodnight's Comedy Club in Raleigh.
 					</p>
@@ -32,9 +45,9 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 
 		<!-- Credits -->
-		<section class="mb-16 max-w-4xl mx-auto">
-			<h2 class="text-3xl font-bold mb-6 text-spotlight-gold">Credits</h2>
-			<div class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg">
+		<section class="mb-16 max-w-4xl mx-auto" aria-labelledby="credits-heading">
+			<h2 id="credits-heading" class="text-3xl font-bold mb-6 text-spotlight-gold">Credits</h2>
+			<div id="about-credits" class="bg-dim-house border border-warm-ivory/10 p-8 rounded-lg">
 				<ul class="space-y-3 text-lg text-warm-ivory">
 					<li><strong><em>Incognegro</em></strong> (2018), hour-long stand-up special</li>
 					<li><strong><em>What's Seasoning?</em></strong> (second special, on HITKOR)</li>
